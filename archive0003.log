@@ -1,0 +1,288 @@
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:connection failed (400 Bad Request)
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"761be0ed-1746-4127-990c-9d2d0fe7aaab","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"761be0ed-1746-4127-990c-9d2d0fe7aaab",{"currentTime":"2023-02-23T14:06:46.355870","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"cf952349-df07-43bf-bccd-719bf1d59436","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:06:46","sampledValue":[{"value":"234.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2389.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"cf952349-df07-43bf-bccd-719bf1d59436",{}]
+INFO:ocpp:1: receive message [2,"36106601-ca5d-4973-b576-134ada4a7167","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:06:51"}]
+INFO:ocpp:1: send [3,"36106601-ca5d-4973-b576-134ada4a7167",{}]
+INFO:ocpp:1: receive message [2,"27787f2b-0416-4730-9173-5a3bea28cd08","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:06:56","sampledValue":[{"value":"234.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2387.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"27787f2b-0416-4730-9173-5a3bea28cd08",{}]
+INFO:ocpp:1: receive message [2,"2474e6ba-42fa-4bbf-bdf3-c067e5edbc88","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:07:06","sampledValue":[{"value":"234.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2392.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"2474e6ba-42fa-4bbf-bdf3-c067e5edbc88",{}]
+INFO:ocpp:1: receive message [2,"8ec83560-8a19-43f6-98da-b8b2d1b1dacb","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:07:16","sampledValue":[{"value":"234.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2392.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"8ec83560-8a19-43f6-98da-b8b2d1b1dacb",{}]
+INFO:ocpp:1: receive message [2,"f9c0cce6-9877-4498-8d4e-092996243a6b","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:07:21"}]
+INFO:ocpp:1: send [3,"f9c0cce6-9877-4498-8d4e-092996243a6b",{}]
+INFO:ocpp:1: receive message [2,"020ed95f-c058-4c89-8855-fc0f0f386363","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:07:26","sampledValue":[{"value":"234.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2390.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"020ed95f-c058-4c89-8855-fc0f0f386363",{}]
+INFO:ocpp:1: receive message [2,"e7c75e59-32f1-43f1-85fb-326746ca33fa","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:07:36","sampledValue":[{"value":"234.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2388.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"e7c75e59-32f1-43f1-85fb-326746ca33fa",{}]
+INFO:ocpp:1: receive message [2,"b4e734ac-a6d1-4ad8-bc1d-f0ddb9146796","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:07:46","sampledValue":[{"value":"233.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2392.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"b4e734ac-a6d1-4ad8-bc1d-f0ddb9146796",{}]
+INFO:ocpp:1: receive message [2,"da0b8b7a-fad9-4344-a85a-fe0cf8d64363","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:07:51"}]
+INFO:ocpp:1: send [3,"da0b8b7a-fad9-4344-a85a-fe0cf8d64363",{}]
+INFO:ocpp:1: receive message [2,"5892b71c-0ba2-4bfd-898a-a92e6a4de68a","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:07:56","sampledValue":[{"value":"233.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2392.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"5892b71c-0ba2-4bfd-898a-a92e6a4de68a",{}]
+INFO:ocpp:1: receive message [2,"42a73c32-27ec-453b-8691-62da4c921872","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:08:06","sampledValue":[{"value":"233.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2391.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"42a73c32-27ec-453b-8691-62da4c921872",{}]
+INFO:ocpp:1: receive message [2,"0ab47077-7a6f-4395-881d-6537924a0885","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:08:16","sampledValue":[{"value":"233.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2396.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"0ab47077-7a6f-4395-881d-6537924a0885",{}]
+INFO:ocpp:1: receive message [2,"6ab11b34-e59d-41c9-bc9a-50374215c5c2","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:08:21"}]
+INFO:ocpp:1: send [3,"6ab11b34-e59d-41c9-bc9a-50374215c5c2",{}]
+INFO:ocpp:1: receive message [2,"ae7a51c8-f316-48e5-a946-2bf965878a49","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:08:26","sampledValue":[{"value":"233.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2393.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"ae7a51c8-f316-48e5-a946-2bf965878a49",{}]
+INFO:ocpp:1: receive message [2,"94557edc-f0fa-4387-8a6c-53776d866f0c","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:08:36","sampledValue":[{"value":"232.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2398.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"94557edc-f0fa-4387-8a6c-53776d866f0c",{}]
+INFO:ocpp:1: receive message [2,"53139325-3755-4b50-ae21-15bd8402bf71","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:08:46","sampledValue":[{"value":"233.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2395.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"53139325-3755-4b50-ae21-15bd8402bf71",{}]
+INFO:ocpp:1: receive message [2,"154ab5ad-9e83-4da7-9951-50390020bf14","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:08:51"}]
+INFO:ocpp:1: send [3,"154ab5ad-9e83-4da7-9951-50390020bf14",{}]
+INFO:ocpp:1: receive message [2,"a3c7cca0-affd-425a-a062-4d42e898253e","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:08:56","sampledValue":[{"value":"233.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2392.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"a3c7cca0-affd-425a-a062-4d42e898253e",{}]
+INFO:ocpp:1: receive message [2,"56f83e6a-de4e-473f-8d9e-3338a430ab6b","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:09:06","sampledValue":[{"value":"233.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2391.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"56f83e6a-de4e-473f-8d9e-3338a430ab6b",{}]
+INFO:ocpp:1: receive message [2,"0953e561-b23e-4d00-903c-ebd48b5e2115","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:09:16","sampledValue":[{"value":"233.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2387.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"0953e561-b23e-4d00-903c-ebd48b5e2115",{}]
+INFO:ocpp:1: receive message [2,"72170729-134c-45e0-a7ad-25b72d24c99a","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:09:22"}]
+INFO:ocpp:1: send [3,"72170729-134c-45e0-a7ad-25b72d24c99a",{}]
+INFO:ocpp:1: receive message [2,"af37c889-e352-450b-866b-b662d229a861","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:09:26","sampledValue":[{"value":"233.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2389.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"af37c889-e352-450b-866b-b662d229a861",{}]
+INFO:ocpp:1: receive message [2,"2bf0119d-051d-450e-bed8-d357a14c3a4d","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:09:36","sampledValue":[{"value":"233.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2384.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"4","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"2bf0119d-051d-450e-bed8-d357a14c3a4d",{}]
+INFO:ocpp:1: receive message [2,"edfb8e95-bb57-4714-bde0-3113e2ee6649","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:09:46","sampledValue":[{"value":"233.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2388.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"edfb8e95-bb57-4714-bde0-3113e2ee6649",{}]
+INFO:ocpp:1: receive message [2,"74b13ff4-9285-4b03-94eb-4b2f9ec5af7b","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:09:52"}]
+INFO:ocpp:1: send [3,"74b13ff4-9285-4b03-94eb-4b2f9ec5af7b",{}]
+INFO:ocpp:1: receive message [2,"94cb9979-0dea-4e8c-87f2-a3f059f3a7dd","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:09:56","sampledValue":[{"value":"233.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2391.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"94cb9979-0dea-4e8c-87f2-a3f059f3a7dd",{}]
+INFO:ocpp:1: receive message [2,"f9169d3b-cf0b-4a0a-9583-d53859e8e6b6","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:10:06","sampledValue":[{"value":"233.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2386.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"f9169d3b-cf0b-4a0a-9583-d53859e8e6b6",{}]
+INFO:ocpp:1: receive message [2,"2173b767-03db-4844-be27-4b95f0ad5114","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:10:16","sampledValue":[{"value":"233.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2387.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"2173b767-03db-4844-be27-4b95f0ad5114",{}]
+INFO:ocpp:1: receive message [2,"e57d321c-105f-4e7f-8192-4b23dcb738bf","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:10:22"}]
+INFO:ocpp:1: send [3,"e57d321c-105f-4e7f-8192-4b23dcb738bf",{}]
+INFO:ocpp:1: receive message [2,"83b49de3-417f-497e-b54d-83c57568afb8","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:10:26","sampledValue":[{"value":"233.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2389.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"83b49de3-417f-497e-b54d-83c57568afb8",{}]
+INFO:ocpp:1: receive message [2,"f327091e-9278-498b-a1a9-db4343ef10d8","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:10:36","sampledValue":[{"value":"234.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2388.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"f327091e-9278-498b-a1a9-db4343ef10d8",{}]
+INFO:ocpp:1: receive message [2,"088c6b98-c0f2-46ac-a531-54506829b841","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:10:46","sampledValue":[{"value":"234.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2389.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"088c6b98-c0f2-46ac-a531-54506829b841",{}]
+INFO:ocpp:1: receive message [2,"38d0c88c-d0f1-4de6-9d46-23325c7e6812","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:10:52"}]
+INFO:ocpp:1: send [3,"38d0c88c-d0f1-4de6-9d46-23325c7e6812",{}]
+INFO:ocpp:1: receive message [2,"df04667e-3378-4d49-bdbb-2b5756b863fe","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:10:56","sampledValue":[{"value":"234.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2387.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"df04667e-3378-4d49-bdbb-2b5756b863fe",{}]
+INFO:ocpp:1: receive message [2,"7ff29b94-7d92-4721-a0bd-9a7caab12516","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:11:06","sampledValue":[{"value":"234.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2379.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"7ff29b94-7d92-4721-a0bd-9a7caab12516",{}]
+INFO:ocpp:1: receive message [2,"be568e94-0f82-4312-9dfd-3d3a78701cf8","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:11:16","sampledValue":[{"value":"234.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2379.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"be568e94-0f82-4312-9dfd-3d3a78701cf8",{}]
+INFO:ocpp:1: receive message [2,"c36ff692-3232-4d03-93a6-cd260832bd44","Heartbeat",{}]
+INFO:ocpp:1: send [3,"c36ff692-3232-4d03-93a6-cd260832bd44",{"currentTime":"2023-02-23T14:06:46.355870Z"}]
+INFO:ocpp:1: receive message [2,"354446cc-88bc-40d1-8397-e3b2c6656e92","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:11:22"}]
+INFO:ocpp:1: send [3,"354446cc-88bc-40d1-8397-e3b2c6656e92",{}]
+INFO:ocpp:1: receive message [2,"df9a9d06-d510-4c31-ae9b-99b4c054211f","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:06:49","sampledValue":[{"value":"234.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2380.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"df9a9d06-d510-4c31-ae9b-99b4c054211f",{}]
+INFO:ocpp:1: receive message [2,"cfee2ef3-4696-4ccd-97d5-e0faa8f439dd","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:06:59","sampledValue":[{"value":"234.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2385.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"cfee2ef3-4696-4ccd-97d5-e0faa8f439dd",{}]
+INFO:ocpp:1: receive message [2,"79e653f2-f4e7-4098-88fe-696c9bd09ea8","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:07:09","sampledValue":[{"value":"234.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2387.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"79e653f2-f4e7-4098-88fe-696c9bd09ea8",{}]
+INFO:ocpp:1: receive message [2,"a9347edd-6ebb-4e31-845c-2c343b42f3f1","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:07:15"}]
+INFO:ocpp:1: send [3,"a9347edd-6ebb-4e31-845c-2c343b42f3f1",{}]
+INFO:websockets.server:connection closed
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"8dbbf672-2f49-4838-828f-1a2f030896b7","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"8dbbf672-2f49-4838-828f-1a2f030896b7",{"currentTime":"2023-02-23T14:30:21.843490","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"7f069430-f9b4-452b-9a43-acf9ec01dcec","Heartbeat",{}]
+INFO:ocpp:1: send [3,"7f069430-f9b4-452b-9a43-acf9ec01dcec",{"currentTime":"2023-02-23T14:30:21.843490Z"}]
+INFO:ocpp:1: receive message [2,"9630a421-c33b-468c-9139-f181c7bb14aa","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:30:21","sampledValue":[{"value":"235.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2382.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"1","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=9630a421-c33b-468c-9139-f181c7bb14aa, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:30:21', 'sampledValue': [{'value': '235.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2382.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '1', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'watts_heur' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 237, in on_meter_values
+    getdb.execute(find_trans % connector_id)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'watts_heur' in 'field list'
+INFO:ocpp:1: send [4,"9630a421-c33b-468c-9139-f181c7bb14aa","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"2b7a0442-5bf3-4900-8af9-0bd6739af795","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:30:21"}]
+INFO:ocpp:1: send [3,"2b7a0442-5bf3-4900-8af9-0bd6739af795",{}]
+INFO:ocpp:1: receive message [2,"05a897d3-b7c0-4e9a-9893-5cc5a11dcb70","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:30:30","sampledValue":[{"value":"235.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2381.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"1","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=05a897d3-b7c0-4e9a-9893-5cc5a11dcb70, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:30:30', 'sampledValue': [{'value': '235.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2381.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '1', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'watts_heur' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 237, in on_meter_values
+    getdb.execute(find_trans % connector_id)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'watts_heur' in 'field list'
+INFO:ocpp:1: send [4,"05a897d3-b7c0-4e9a-9893-5cc5a11dcb70","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"8b380c0b-1def-4a79-b572-f05cb964fc54","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:30:40","sampledValue":[{"value":"235.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2381.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"1","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=8b380c0b-1def-4a79-b572-f05cb964fc54, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:30:40', 'sampledValue': [{'value': '235.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2381.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '1', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'watts_heur' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 237, in on_meter_values
+    getdb.execute(find_trans % connector_id)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'watts_heur' in 'field list'
+INFO:ocpp:1: send [4,"8b380c0b-1def-4a79-b572-f05cb964fc54","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"2d89caaf-039f-4bb1-ab23-4e0cae19388b","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:30:50","sampledValue":[{"value":"235.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2381.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"1","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=2d89caaf-039f-4bb1-ab23-4e0cae19388b, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:30:50', 'sampledValue': [{'value': '235.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2381.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '1', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'watts_heur' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 237, in on_meter_values
+    getdb.execute(find_trans % connector_id)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'watts_heur' in 'field list'
+INFO:ocpp:1: send [4,"2d89caaf-039f-4bb1-ab23-4e0cae19388b","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"2109c76b-9d41-4349-8775-eec8d8a897f4","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:30:50"}]
+INFO:ocpp:1: send [3,"2109c76b-9d41-4349-8775-eec8d8a897f4",{}]
+INFO:ocpp:1: receive message [2,"4ffed6a1-3cb7-4708-8db3-1b72a4a0cde5","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:31:00","sampledValue":[{"value":"235.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"1","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=4ffed6a1-3cb7-4708-8db3-1b72a4a0cde5, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:31:00', 'sampledValue': [{'value': '235.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '1', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'watts_heur' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 237, in on_meter_values
+    getdb.execute(find_trans % connector_id)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'watts_heur' in 'field list'
+INFO:ocpp:1: send [4,"4ffed6a1-3cb7-4708-8db3-1b72a4a0cde5","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"8712d429-e187-4db6-a218-3fcf4d08db89","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:31:10","sampledValue":[{"value":"235.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2378.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"1","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=8712d429-e187-4db6-a218-3fcf4d08db89, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:31:10', 'sampledValue': [{'value': '235.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2378.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '1', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'watts_heur' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 237, in on_meter_values
+    getdb.execute(find_trans % connector_id)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'watts_heur' in 'field list'
+INFO:ocpp:1: send [4,"8712d429-e187-4db6-a218-3fcf4d08db89","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"479869d3-2b8e-4790-a69e-129dfe7136fa","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:31:20","sampledValue":[{"value":"235.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2381.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"1","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=479869d3-2b8e-4790-a69e-129dfe7136fa, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:31:20', 'sampledValue': [{'value': '235.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2381.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '1', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'watts_heur' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 237, in on_meter_values
+    getdb.execute(find_trans % connector_id)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'watts_heur' in 'field list'
+INFO:ocpp:1: send [4,"479869d3-2b8e-4790-a69e-129dfe7136fa","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"756897e8-431b-4e08-ab5c-56c18889dc52","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:31:20"}]
+INFO:ocpp:1: send [3,"756897e8-431b-4e08-ab5c-56c18889dc52",{}]
+INFO:ocpp:1: receive message [2,"652d8f3a-e03e-412d-9737-c065bbe63586","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:31:30","sampledValue":[{"value":"235.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2383.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"1","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=652d8f3a-e03e-412d-9737-c065bbe63586, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:31:30', 'sampledValue': [{'value': '235.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2383.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '1', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'watts_heur' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 237, in on_meter_values
+    getdb.execute(find_trans % connector_id)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'watts_heur' in 'field list'
+INFO:ocpp:1: send [4,"652d8f3a-e03e-412d-9737-c065bbe63586","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"5bb1706f-2f5b-40b0-8d69-b407cefe4c5c","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:31:40","sampledValue":[{"value":"235.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"1","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=5bb1706f-2f5b-40b0-8d69-b407cefe4c5c, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:31:40', 'sampledValue': [{'value': '235.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '1', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'watts_heur' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 237, in on_meter_values
+    getdb.execute(find_trans % connector_id)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'watts_heur' in 'field list'
+INFO:ocpp:1: send [4,"5bb1706f-2f5b-40b0-8d69-b407cefe4c5c","InternalError","An unexpected error occurred.",{}]
+INFO:websockets.server:connection closed
+INFO:websockets.server:server listening on 10.45.2.39:9000

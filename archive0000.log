@@ -1,0 +1,1003 @@
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"bb784cd5-2c39-480b-9ee2-5edab8a10436","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"bb784cd5-2c39-480b-9ee2-5edab8a10436",{"currentTime":"2023-02-23T10:57:09.109876","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"58e436d1-f34d-428d-b534-b75b4957affc","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T10:57:10","sampledValue":[{"value":"236.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2373.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"13","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=58e436d1-f34d-428d-b534-b75b4957affc, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T10:57:10', 'sampledValue': [{'value': '236.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2373.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '13', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+TypeError: on_meter_values() missing 1 required positional argument: 'transaction_id'
+INFO:ocpp:1: send [4,"58e436d1-f34d-428d-b534-b75b4957affc","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"90184d07-529b-4be8-a97f-3e025917c4ca","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T10:57:20","sampledValue":[{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2376.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"13","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=90184d07-529b-4be8-a97f-3e025917c4ca, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T10:57:20', 'sampledValue': [{'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2376.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '13', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+TypeError: on_meter_values() missing 1 required positional argument: 'transaction_id'
+INFO:ocpp:1: send [4,"90184d07-529b-4be8-a97f-3e025917c4ca","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"d2a342cc-b5b1-49ca-92b2-c4df8bab2bea","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T10:57:30"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    await cp.start()
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"50361dba-b416-47b2-981b-23ec5b151e14","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"50361dba-b416-47b2-981b-23ec5b151e14",{"currentTime":"2023-02-23T10:57:09.109876","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"3274718f-638a-4471-9634-2d8111732f7f","StartTransaction",{"connectorId":1,"idTag":"526D94BA","meterStart":0,"timestamp":"2023-02-23T10:57:41"}]
+INFO:ocpp:1: send [3,"3274718f-638a-4471-9634-2d8111732f7f",{"transactionId":0,"idTagInfo":{"status":"Invalid","expiryDate":"2023-02-23T10:57:09.109876"}}]
+INFO:ocpp:1: receive message [2,"b7e43daa-339a-4404-aad2-a78b659d4a7a","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T10:57:09","sampledValue":[{"value":"232.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2341.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"13","measurand":"Temperature","unit":"Celsius"},{"value":"11288","measurand":"Power.Active.Export","unit":"W"},{"value":"9769","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=b7e43daa-339a-4404-aad2-a78b659d4a7a, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T10:57:09', 'sampledValue': [{'value': '232.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2341.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '13', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11288', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '9769', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"b7e43daa-339a-4404-aad2-a78b659d4a7a","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"4bc6eec3-2a77-4376-b6f8-32547ea60432","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T10:57:09"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    await cp.start()
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"516e20cf-8611-43b0-b89f-cf0d93c831bb","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"516e20cf-8611-43b0-b89f-cf0d93c831bb",{"currentTime":"2023-02-23T10:57:09.109876","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"d1936e6f-405c-404b-84d1-32a5e1011467","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T10:57:09","sampledValue":[{"value":"232.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2348.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"13","measurand":"Temperature","unit":"Celsius"},{"value":"11238","measurand":"Power.Active.Export","unit":"W"},{"value":"37140","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=d1936e6f-405c-404b-84d1-32a5e1011467, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T10:57:09', 'sampledValue': [{'value': '232.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2348.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '13', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11238', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '37140', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"d1936e6f-405c-404b-84d1-32a5e1011467","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"3dba788c-4bcd-45ea-9712-2588076e3bb1","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T10:57:09"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    await cp.start()
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"7717ec28-ea04-49b3-ae93-4d9e39a64f23","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"7717ec28-ea04-49b3-ae93-4d9e39a64f23",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"04b322c7-2c65-43a3-943e-98636a119be3","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"233.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"231.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2358.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"13","measurand":"Temperature","unit":"Celsius"},{"value":"11273","measurand":"Power.Active.Export","unit":"W"},{"value":"56968","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=04b322c7-2c65-43a3-943e-98636a119be3, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '233.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '231.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2358.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '13', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11273', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '56968', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"04b322c7-2c65-43a3-943e-98636a119be3","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"7f490d13-a22f-4b6a-9af9-73f2c7c9a20f","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    await cp.start()
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"68b4121a-ea64-4ed0-901b-039685d8ca6f","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"68b4121a-ea64-4ed0-901b-039685d8ca6f",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"66031d7f-34eb-4180-a5ee-c8eab28144af","Heartbeat",{}]
+INFO:ocpp:1: send [3,"66031d7f-34eb-4180-a5ee-c8eab28144af",{"currentTime":"2023-02-23T11:01:48.053855Z"}]
+INFO:ocpp:1: receive message [2,"fd7809e8-981c-4d68-80b2-1e308fa28d74","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"232.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"233.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2339.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"13","measurand":"Temperature","unit":"Celsius"},{"value":"11272","measurand":"Power.Active.Export","unit":"W"},{"value":"76822","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=fd7809e8-981c-4d68-80b2-1e308fa28d74, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '232.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2339.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '13', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11272', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '76822', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"fd7809e8-981c-4d68-80b2-1e308fa28d74","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"5527bbc0-f3bc-4e76-aea4-07d1e0f9207a","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"b1e91cc1-ef48-45be-8c38-af282c9c00b6","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"b1e91cc1-ef48-45be-8c38-af282c9c00b6",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"8118191e-d948-4314-ae82-60b96acf96e9","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"232.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2344.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"14","measurand":"Temperature","unit":"Celsius"},{"value":"11290","measurand":"Power.Active.Export","unit":"W"},{"value":"96682","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=8118191e-d948-4314-ae82-60b96acf96e9, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '232.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2344.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '14', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11290', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '96682', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"8118191e-d948-4314-ae82-60b96acf96e9","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"b62c2dba-84fc-4e8c-b57f-22d1e302623d","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"b5266062-98f7-461e-a818-2833f4ce298f","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"b5266062-98f7-461e-a818-2833f4ce298f",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"add9c88b-6e13-44bb-86a6-4a73ea03b3d1","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"231.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2349.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"14","measurand":"Temperature","unit":"Celsius"},{"value":"11216","measurand":"Power.Active.Export","unit":"W"},{"value":"116571","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=add9c88b-6e13-44bb-86a6-4a73ea03b3d1, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '231.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2349.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '14', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11216', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '116571', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"add9c88b-6e13-44bb-86a6-4a73ea03b3d1","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"299b4d5e-2317-46d5-8da3-5c1e9918eb8d","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"03816d83-76af-472f-8edf-1fe3d7d01a0c","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"03816d83-76af-472f-8edf-1fe3d7d01a0c",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"9ea382fa-5ee9-448f-9478-54eca8482ef4","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"232.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2355.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"14","measurand":"Temperature","unit":"Celsius"},{"value":"11230","measurand":"Power.Active.Export","unit":"W"},{"value":"136444","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=9ea382fa-5ee9-448f-9478-54eca8482ef4, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '232.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2355.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '14', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11230', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '136444', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"9ea382fa-5ee9-448f-9478-54eca8482ef4","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"201cd83a-f8e9-4dce-abd8-c4847421def2","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"a19ae458-187e-474b-979d-7e4ad2ed1fb1","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"a19ae458-187e-474b-979d-7e4ad2ed1fb1",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"7ead4984-c01f-4303-88ea-d67f1e86e513","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"231.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2353.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"14","measurand":"Temperature","unit":"Celsius"},{"value":"11244","measurand":"Power.Active.Export","unit":"W"},{"value":"155945","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=7ead4984-c01f-4303-88ea-d67f1e86e513, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '231.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2353.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '14', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11244', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '155945', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"7ead4984-c01f-4303-88ea-d67f1e86e513","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"bd1abbaa-13e7-49c9-a86a-e81282b62a29","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"b69c2bb8-b5ea-4cca-831b-23313cfd7f94","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"b69c2bb8-b5ea-4cca-831b-23313cfd7f94",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"b709efdd-8cf3-4d7f-8dc0-85cc238d562e","Heartbeat",{}]
+INFO:ocpp:1: send [3,"b709efdd-8cf3-4d7f-8dc0-85cc238d562e",{"currentTime":"2023-02-23T11:01:48.053855Z"}]
+INFO:ocpp:1: receive message [2,"76323a24-7700-4003-bbd3-423fdad9ea6a","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"231.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"232.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2362.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"14","measurand":"Temperature","unit":"Celsius"},{"value":"11167","measurand":"Power.Active.Export","unit":"W"},{"value":"175693","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=76323a24-7700-4003-bbd3-423fdad9ea6a, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '231.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '232.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '236.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2362.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '14', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11167', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '175693', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"76323a24-7700-4003-bbd3-423fdad9ea6a","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"bed92d00-10c1-4e78-91f5-54eb66413edb","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"6f35287b-06b3-4e54-a155-5eb348f0705c","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"6f35287b-06b3-4e54-a155-5eb348f0705c",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"d139b876-0c4f-49f2-a22e-72b104d74673","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"230.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2360.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"14","measurand":"Temperature","unit":"Celsius"},{"value":"11246","measurand":"Power.Active.Export","unit":"W"},{"value":"195491","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=d139b876-0c4f-49f2-a22e-72b104d74673, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '230.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '236.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2360.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '14', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11246', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '195491', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"d139b876-0c4f-49f2-a22e-72b104d74673","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"2feb4b7d-4bc1-476c-831c-2a6b4467b0e9","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"1ee26e04-5b70-4254-be54-973e6bfc10dd","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"1ee26e04-5b70-4254-be54-973e6bfc10dd",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"98887718-26f3-4e45-a1ab-4340d98ac617","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"229.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2362.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"14","measurand":"Temperature","unit":"Celsius"},{"value":"11170","measurand":"Power.Active.Export","unit":"W"},{"value":"214921","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=98887718-26f3-4e45-a1ab-4340d98ac617, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '229.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '236.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2362.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '14', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11170', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '214921', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"98887718-26f3-4e45-a1ab-4340d98ac617","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"d49238fe-bacb-4ab6-bbfd-665d11dad5b1","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"e4d95848-90dc-4660-b5bf-face500cf7eb","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"e4d95848-90dc-4660-b5bf-face500cf7eb",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"d21c7119-3d41-462a-9cf6-aa0d50a60945","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"230.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2365.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"14","measurand":"Temperature","unit":"Celsius"},{"value":"11199","measurand":"Power.Active.Export","unit":"W"},{"value":"234680","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=d21c7119-3d41-462a-9cf6-aa0d50a60945, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '230.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '236.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2365.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '14', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11199', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '234680', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"d21c7119-3d41-462a-9cf6-aa0d50a60945","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"16d1e781-0ea5-4c9c-9845-6ee0951f02d8","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"96e5d8bc-c3b8-4044-a2c1-106b2472859c","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"96e5d8bc-c3b8-4044-a2c1-106b2472859c",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"4c38c40c-4cb9-4147-bd9d-5e45eb496a17","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2358.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"11339","measurand":"Power.Active.Export","unit":"W"},{"value":"254489","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=4c38c40c-4cb9-4147-bd9d-5e45eb496a17, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2358.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11339', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '254489', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"4c38c40c-4cb9-4147-bd9d-5e45eb496a17","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"57f0a8c6-d122-4ab4-ae1b-d3ba284f9dc3","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"d530ad60-4046-40eb-bba3-cb506539f241","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"d530ad60-4046-40eb-bba3-cb506539f241",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"f57da323-e16a-4cf9-a05a-9a72919cdfa5","Heartbeat",{}]
+INFO:ocpp:1: send [3,"f57da323-e16a-4cf9-a05a-9a72919cdfa5",{"currentTime":"2023-02-23T11:01:48.053855Z"}]
+INFO:ocpp:1: receive message [2,"1705bd7a-3358-4712-8374-46bd6e47dddd","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2358.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"11305","measurand":"Power.Active.Export","unit":"W"},{"value":"275292","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=1705bd7a-3358-4712-8374-46bd6e47dddd, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2358.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11305', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '275292', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"1705bd7a-3358-4712-8374-46bd6e47dddd","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"7ccae198-ec15-479d-8cd5-fafe6d1c253a","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"9a228705-8bdf-4a7c-b464-dc5db2d63352","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"9a228705-8bdf-4a7c-b464-dc5db2d63352",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"d6443f7b-b004-4942-b0c9-36276cf8b3dd","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"231.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2356.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"11350","measurand":"Power.Active.Export","unit":"W"},{"value":"295167","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=d6443f7b-b004-4942-b0c9-36276cf8b3dd, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '231.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2356.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11350', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '295167', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"d6443f7b-b004-4942-b0c9-36276cf8b3dd","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"07b37785-05c2-40dd-a0cd-29ef127703ef","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"c0ea7002-c476-4d71-950d-304c175d58be","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"c0ea7002-c476-4d71-950d-304c175d58be",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"92149e71-f51a-4efc-84a1-96ccc7f0f61e","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"231.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2353.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"11253","measurand":"Power.Active.Export","unit":"W"},{"value":"315682","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=92149e71-f51a-4efc-84a1-96ccc7f0f61e, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '231.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2353.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11253', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '315682', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"92149e71-f51a-4efc-84a1-96ccc7f0f61e","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"c8f2bd1a-affc-49f8-a5e7-9449f2ea2bdb","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"54dc6f3a-dcb0-44a0-ba73-509702040690","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"54dc6f3a-dcb0-44a0-ba73-509702040690",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"bd93f621-99dc-4342-b529-9d5efd8b4009","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2359.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"11272","measurand":"Power.Active.Export","unit":"W"},{"value":"335535","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=bd93f621-99dc-4342-b529-9d5efd8b4009, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2359.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11272', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '335535', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"bd93f621-99dc-4342-b529-9d5efd8b4009","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"26832a20-e9d4-4cb5-aab3-aaddb84d0431","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"72916d6e-9490-4b0b-b341-b18f3cf7b2c1","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"72916d6e-9490-4b0b-b341-b18f3cf7b2c1",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"518a4c70-f628-49a2-815c-d19a289880cd","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2350.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"11364","measurand":"Power.Active.Export","unit":"W"},{"value":"355113","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=518a4c70-f628-49a2-815c-d19a289880cd, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2350.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11364', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '355113', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"518a4c70-f628-49a2-815c-d19a289880cd","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"a6da7051-a307-4997-9acb-9e8504992bdc","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"105fa63a-eccd-4a44-b296-34cdd18c190d","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"105fa63a-eccd-4a44-b296-34cdd18c190d",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"0578f6ed-98a2-4477-a26c-0bb60b6cc177","Heartbeat",{}]
+INFO:ocpp:1: send [3,"0578f6ed-98a2-4477-a26c-0bb60b6cc177",{"currentTime":"2023-02-23T11:01:48.053855Z"}]
+INFO:ocpp:1: receive message [2,"b39d4d99-457e-4a42-bcb1-9d82c253fc67","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"233.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2339.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"11331","measurand":"Power.Active.Export","unit":"W"},{"value":"374994","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=b39d4d99-457e-4a42-bcb1-9d82c253fc67, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2339.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11331', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '374994', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"b39d4d99-457e-4a42-bcb1-9d82c253fc67","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"6cf17c17-92ef-4b1c-ab2f-7b51268fb2c4","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"efa8cb1b-a8f7-4073-92ac-c374e73ae9ea","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"efa8cb1b-a8f7-4073-92ac-c374e73ae9ea",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"c6bb8272-a669-4e74-9bae-bceaba865f12","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2348.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"11346","measurand":"Power.Active.Export","unit":"W"},{"value":"395929","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c6bb8272-a669-4e74-9bae-bceaba865f12, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2348.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11346', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '395929', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"c6bb8272-a669-4e74-9bae-bceaba865f12","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"70d07bfe-15a3-4d29-8360-4801f49b4bb8","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"cdf2888f-f8e4-400d-9361-14956b03a659","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"cdf2888f-f8e4-400d-9361-14956b03a659",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"f52d6f8d-90c1-44cf-8009-9141a8653bdb","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"162.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2353.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"162.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"11379","measurand":"Power.Active.Export","unit":"W"},{"value":"415930","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f52d6f8d-90c1-44cf-8009-9141a8653bdb, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '162.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2353.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11379', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '415930', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"f52d6f8d-90c1-44cf-8009-9141a8653bdb","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"af6f28ec-3fcb-4c1f-a78d-a2c0b6569574","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    cp = ChargePoint(charge_point_id, websocket)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"7a5ef9d7-3d33-4153-97fc-0beb8dfac73c","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"7a5ef9d7-3d33-4153-97fc-0beb8dfac73c",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"f10d4cb7-4691-4431-b7be-60c64bf3af32","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"231.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2367.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11349","measurand":"Power.Active.Export","unit":"W"},{"value":"435901","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f10d4cb7-4691-4431-b7be-60c64bf3af32, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '231.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '236.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2367.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11349', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '435901', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"f10d4cb7-4691-4431-b7be-60c64bf3af32","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"a3989dac-dfb4-4b51-a5a7-16afafeef656","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    requested_protocols)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"e0fd4b79-b64e-4776-ae23-814aeca578a4","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"e0fd4b79-b64e-4776-ae23-814aeca578a4",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"cad244bb-29cf-48ab-8d72-ef263f674995","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"231.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2369.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11329","measurand":"Power.Active.Export","unit":"W"},{"value":"455886","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=cad244bb-29cf-48ab-8d72-ef263f674995, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '231.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '236.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2369.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11329', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '455886', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"cad244bb-29cf-48ab-8d72-ef263f674995","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"3d99df5d-973e-4b8a-aede-2553642919d1","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    requested_protocols)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"cfc5ef5d-49a4-48d8-a3c5-12b1604ae1e4","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"cfc5ef5d-49a4-48d8-a3c5-12b1604ae1e4",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"54e58a01-5c8c-47b3-a495-183b4348aa9d","Heartbeat",{}]
+INFO:ocpp:1: send [3,"54e58a01-5c8c-47b3-a495-183b4348aa9d",{"currentTime":"2023-02-23T11:01:48.053855Z"}]
+INFO:ocpp:1: receive message [2,"0ca63922-23a0-4127-ab36-f6c393263331","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"231.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2354.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11247","measurand":"Power.Active.Export","unit":"W"},{"value":"475821","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=0ca63922-23a0-4127-ab36-f6c393263331, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '231.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2354.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11247', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '475821', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"0ca63922-23a0-4127-ab36-f6c393263331","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"202dafb6-7ac3-4e09-96b1-f80f7344dbc0","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    requested_protocols)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"a7846e68-49b6-4e0f-a4c1-eeeac5ed4c47","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"a7846e68-49b6-4e0f-a4c1-eeeac5ed4c47",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"068df780-3141-42d9-98ac-84814d7456ab","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2340.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11308","measurand":"Power.Active.Export","unit":"W"},{"value":"495714","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=068df780-3141-42d9-98ac-84814d7456ab, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2340.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11308', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '495714', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"068df780-3141-42d9-98ac-84814d7456ab","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"d873fd67-b3ed-48e6-8b54-8c16a956ce71","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    requested_protocols)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"5503bd8d-2af6-46ab-bb89-08e0986b4ee2","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"5503bd8d-2af6-46ab-bb89-08e0986b4ee2",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"394fec5a-4f5d-4adf-be37-e8df37ae56f7","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2340.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11303","measurand":"Power.Active.Export","unit":"W"},{"value":"515287","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=394fec5a-4f5d-4adf-be37-e8df37ae56f7, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2340.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11303', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '515287', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"394fec5a-4f5d-4adf-be37-e8df37ae56f7","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"2817ca64-2698-4e5d-a16a-716971d150d6","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    requested_protocols)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"530b7868-3793-40d1-b40a-d218eb73da7d","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"530b7868-3793-40d1-b40a-d218eb73da7d",{"currentTime":"2023-02-23T11:01:48.053855","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"60af4d45-a164-4bf3-9af1-a5f76b4e651b","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:01:48","sampledValue":[{"value":"232.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2342.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11283","measurand":"Power.Active.Export","unit":"W"},{"value":"535440","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=60af4d45-a164-4bf3-9af1-a5f76b4e651b, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:01:48', 'sampledValue': [{'value': '232.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2342.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11283', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '535440', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 213, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"60af4d45-a164-4bf3-9af1-a5f76b4e651b","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"cae47399-d32f-4bae-b7e2-7124eb61d955","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:01:48"}]
+ERROR:websockets.server:connection handler failed
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 236, in handler
+    await self.ws_handler(self)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/websockets/legacy/server.py", line 1175, in _ws_handler
+    return await cast(
+  File "/home/elite/Workplace/quanto/app.py", line 381, in on_connect
+    requested_protocols)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 130, in start
+    await self.route_message(message)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 153, in route_message
+    await self._handle_call(msg)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 208, in _handle_call
+    temp_response_payload = asdict(response)
+  File "/usr/lib/python3.9/dataclasses.py", line 1074, in asdict
+    raise TypeError("asdict() should be called on dataclass instances")
+TypeError: asdict() should be called on dataclass instances
+INFO:websockets.server:connection closed

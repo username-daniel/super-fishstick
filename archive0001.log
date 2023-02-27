@@ -1,0 +1,1097 @@
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"59b50a32-b3a3-448d-a1cb-540b92869c27","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"59b50a32-b3a3-448d-a1cb-540b92869c27",{"currentTime":"2023-02-23T11:28:50.304614","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"469ece0f-0bf7-49b3-9cef-f7828fbeb07d","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:28:50","sampledValue":[{"value":"231.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2341.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11196","measurand":"Power.Active.Export","unit":"W"},{"value":"561873","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=469ece0f-0bf7-49b3-9cef-f7828fbeb07d, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:28:50', 'sampledValue': [{'value': '231.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2341.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11196', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '561873', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"469ece0f-0bf7-49b3-9cef-f7828fbeb07d","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"e2898112-5d6c-4c22-8cd6-267ad36364b8","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:28:50"}]
+INFO:ocpp:1: send [3,"e2898112-5d6c-4c22-8cd6-267ad36364b8",{}]
+INFO:ocpp:1: receive message [2,"e85a6047-ae6b-44c9-b2a6-779b1bb32f57","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:00","sampledValue":[{"value":"231.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2347.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11215","measurand":"Power.Active.Export","unit":"W"},{"value":"565002","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=e85a6047-ae6b-44c9-b2a6-779b1bb32f57, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:00', 'sampledValue': [{'value': '231.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2347.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11215', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '565002', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"e85a6047-ae6b-44c9-b2a6-779b1bb32f57","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"c2e0048c-c01c-4b28-88a2-eb857c62222c","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:10","sampledValue":[{"value":"231.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2348.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11290","measurand":"Power.Active.Export","unit":"W"},{"value":"568170","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c2e0048c-c01c-4b28-88a2-eb857c62222c, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:10', 'sampledValue': [{'value': '231.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2348.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11290', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '568170', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"c2e0048c-c01c-4b28-88a2-eb857c62222c","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"d5182c2e-013e-4b2c-9c44-df8b1ed469da","Heartbeat",{}]
+INFO:ocpp:1: send [3,"d5182c2e-013e-4b2c-9c44-df8b1ed469da",{"currentTime":"2023-02-23T11:28:50.304614Z"}]
+INFO:ocpp:1: receive message [2,"266a2b45-5c1c-4ddb-944c-0bfef9c89859","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:28:54","sampledValue":[{"value":"231.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2345.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11204","measurand":"Power.Active.Export","unit":"W"},{"value":"571312","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=266a2b45-5c1c-4ddb-944c-0bfef9c89859, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:28:54', 'sampledValue': [{'value': '231.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2345.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11204', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '571312', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"266a2b45-5c1c-4ddb-944c-0bfef9c89859","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"40c0dd63-a3d4-4c1c-b594-74f4e8a79e58","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:28:54"}]
+INFO:ocpp:1: send [3,"40c0dd63-a3d4-4c1c-b594-74f4e8a79e58",{}]
+INFO:ocpp:1: receive message [2,"29eca1ca-fc98-4c66-8cd6-5a9d1a205379","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:04","sampledValue":[{"value":"231.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2341.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11253","measurand":"Power.Active.Export","unit":"W"},{"value":"574447","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=29eca1ca-fc98-4c66-8cd6-5a9d1a205379, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:04', 'sampledValue': [{'value': '231.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2341.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11253', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '574447', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"29eca1ca-fc98-4c66-8cd6-5a9d1a205379","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"8de4767d-c90c-49fc-810d-96d36615f252","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:14","sampledValue":[{"value":"231.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2353.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11301","measurand":"Power.Active.Export","unit":"W"},{"value":"577286","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=8de4767d-c90c-49fc-810d-96d36615f252, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:14', 'sampledValue': [{'value': '231.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2353.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11301', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '577286', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"8de4767d-c90c-49fc-810d-96d36615f252","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"d973ca1d-ab23-4972-9b8e-7ec19d0cfd8f","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:24","sampledValue":[{"value":"230.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2355.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11238","measurand":"Power.Active.Export","unit":"W"},{"value":"580435","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=d973ca1d-ab23-4972-9b8e-7ec19d0cfd8f, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:24', 'sampledValue': [{'value': '230.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2355.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11238', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '580435', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"d973ca1d-ab23-4972-9b8e-7ec19d0cfd8f","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"2198aa42-fdfb-4bfe-9547-0078fc9ce70c","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:29:24"}]
+INFO:ocpp:1: send [3,"2198aa42-fdfb-4bfe-9547-0078fc9ce70c",{}]
+INFO:ocpp:1: receive message [2,"8584782a-0ae0-44b4-b8fe-3445d92941c2","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:34","sampledValue":[{"value":"231.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2354.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11231","measurand":"Power.Active.Export","unit":"W"},{"value":"583578","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=8584782a-0ae0-44b4-b8fe-3445d92941c2, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:34', 'sampledValue': [{'value': '231.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2354.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11231', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '583578', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"8584782a-0ae0-44b4-b8fe-3445d92941c2","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"2c5ccb45-02e3-4c20-917b-19d78c10cc2d","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:44","sampledValue":[{"value":"231.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2356.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11224","measurand":"Power.Active.Export","unit":"W"},{"value":"586719","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=2c5ccb45-02e3-4c20-917b-19d78c10cc2d, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:44', 'sampledValue': [{'value': '231.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2356.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11224', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '586719', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"2c5ccb45-02e3-4c20-917b-19d78c10cc2d","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"fd3bbcfb-cc23-45c6-a446-4657f95c7187","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:54","sampledValue":[{"value":"231.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2347.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11236","measurand":"Power.Active.Export","unit":"W"},{"value":"589854","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=fd3bbcfb-cc23-45c6-a446-4657f95c7187, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:54', 'sampledValue': [{'value': '231.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2347.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11236', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '589854', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"fd3bbcfb-cc23-45c6-a446-4657f95c7187","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"a681d098-a7d7-45ad-9980-96fe4457fa80","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:29:54"}]
+INFO:ocpp:1: send [3,"a681d098-a7d7-45ad-9980-96fe4457fa80",{}]
+INFO:ocpp:1: receive message [2,"9705eb86-702a-4b9a-82a8-f4dba39947bd","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:04","sampledValue":[{"value":"229.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2363.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11196","measurand":"Power.Active.Export","unit":"W"},{"value":"593000","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=9705eb86-702a-4b9a-82a8-f4dba39947bd, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:04', 'sampledValue': [{'value': '229.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '236.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2363.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11196', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '593000', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"9705eb86-702a-4b9a-82a8-f4dba39947bd","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"8748dd25-d50f-4d77-8470-96f9a5a7243e","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:14","sampledValue":[{"value":"230.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2365.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11234","measurand":"Power.Active.Export","unit":"W"},{"value":"596129","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=8748dd25-d50f-4d77-8470-96f9a5a7243e, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:14', 'sampledValue': [{'value': '230.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '236.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2365.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11234', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '596129', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"8748dd25-d50f-4d77-8470-96f9a5a7243e","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"83229dd4-945a-4168-8c0f-eb2e173f55a1","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:24","sampledValue":[{"value":"230.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2364.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11197","measurand":"Power.Active.Export","unit":"W"},{"value":"599276","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=83229dd4-945a-4168-8c0f-eb2e173f55a1, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:24', 'sampledValue': [{'value': '230.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '236.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2364.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11197', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '599276', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"83229dd4-945a-4168-8c0f-eb2e173f55a1","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"332df2e5-b3c7-4945-9d26-af198faa72e5","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:30:24"}]
+INFO:ocpp:1: send [3,"332df2e5-b3c7-4945-9d26-af198faa72e5",{}]
+INFO:ocpp:1: receive message [2,"157ed58e-908b-4d31-94c4-bd909124a9dd","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:34","sampledValue":[{"value":"230.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"158.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2344.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"11138","measurand":"Power.Active.Export","unit":"W"},{"value":"602398","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=157ed58e-908b-4d31-94c4-bd909124a9dd, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:34', 'sampledValue': [{'value': '230.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '158.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2344.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11138', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '602398', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"157ed58e-908b-4d31-94c4-bd909124a9dd","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"62a25d15-bf4f-4eed-8e66-71e592e205ad","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:44","sampledValue":[{"value":"230.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2345.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11232","measurand":"Power.Active.Export","unit":"W"},{"value":"605521","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=62a25d15-bf4f-4eed-8e66-71e592e205ad, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:44', 'sampledValue': [{'value': '230.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2345.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11232', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '605521', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"62a25d15-bf4f-4eed-8e66-71e592e205ad","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"f84c956b-5a0b-467c-8714-1016050ff7b2","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:54","sampledValue":[{"value":"229.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2351.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11158","measurand":"Power.Active.Export","unit":"W"},{"value":"608654","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f84c956b-5a0b-467c-8714-1016050ff7b2, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:54', 'sampledValue': [{'value': '229.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2351.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11158', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '608654', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"f84c956b-5a0b-467c-8714-1016050ff7b2","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"00313b7f-6b73-4664-a9f8-a9f975a4cae3","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:30:54"}]
+INFO:ocpp:1: send [3,"00313b7f-6b73-4664-a9f8-a9f975a4cae3",{}]
+INFO:ocpp:1: receive message [2,"877dc593-2fb5-4114-b57f-b9d07d7e3862","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:04","sampledValue":[{"value":"230.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2345.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11179","measurand":"Power.Active.Export","unit":"W"},{"value":"611780","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=877dc593-2fb5-4114-b57f-b9d07d7e3862, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:04', 'sampledValue': [{'value': '230.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '236.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2345.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11179', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '611780', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"877dc593-2fb5-4114-b57f-b9d07d7e3862","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"a5ead3c6-c681-462d-8aca-a2d32583290e","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:14","sampledValue":[{"value":"230.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2356.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11234","measurand":"Power.Active.Export","unit":"W"},{"value":"614927","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=a5ead3c6-c681-462d-8aca-a2d32583290e, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:14', 'sampledValue': [{'value': '230.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2356.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11234', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '614927', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"a5ead3c6-c681-462d-8aca-a2d32583290e","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"5a401fca-de1f-4eb8-b153-8981b2b7247e","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:24","sampledValue":[{"value":"230.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2358.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11175","measurand":"Power.Active.Export","unit":"W"},{"value":"618059","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=5a401fca-de1f-4eb8-b153-8981b2b7247e, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:24', 'sampledValue': [{'value': '230.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2358.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11175', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '618059', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"5a401fca-de1f-4eb8-b153-8981b2b7247e","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"ae681dc4-525b-47f0-9587-9dc9bb73302f","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:31:24"}]
+INFO:ocpp:1: send [3,"ae681dc4-525b-47f0-9587-9dc9bb73302f",{}]
+INFO:ocpp:1: receive message [2,"1bfab828-dbb8-4547-975f-5c966afaa594","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:34","sampledValue":[{"value":"229.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2356.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11224","measurand":"Power.Active.Export","unit":"W"},{"value":"621201","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=1bfab828-dbb8-4547-975f-5c966afaa594, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:34', 'sampledValue': [{'value': '229.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2356.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11224', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '621201', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"1bfab828-dbb8-4547-975f-5c966afaa594","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"4d149e32-3c92-4dab-b049-008d134828b6","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:44","sampledValue":[{"value":"230.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2358.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11189","measurand":"Power.Active.Export","unit":"W"},{"value":"624335","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=4d149e32-3c92-4dab-b049-008d134828b6, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:44', 'sampledValue': [{'value': '230.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2358.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11189', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '624335', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"4d149e32-3c92-4dab-b049-008d134828b6","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"61349089-dc0f-485e-887b-b746257de44a","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:54","sampledValue":[{"value":"230.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2356.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11230","measurand":"Power.Active.Export","unit":"W"},{"value":"627157","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=61349089-dc0f-485e-887b-b746257de44a, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:54', 'sampledValue': [{'value': '230.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2356.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11230', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '627157', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"61349089-dc0f-485e-887b-b746257de44a","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"9cacb5b5-b24e-4483-aa12-b47d29f21a87","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:31:54"}]
+INFO:ocpp:1: send [3,"9cacb5b5-b24e-4483-aa12-b47d29f21a87",{}]
+INFO:ocpp:1: receive message [2,"a0fdcb02-33bb-4138-be3e-c8dc40fe70e0","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:04","sampledValue":[{"value":"230.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2356.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11191","measurand":"Power.Active.Export","unit":"W"},{"value":"630292","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=a0fdcb02-33bb-4138-be3e-c8dc40fe70e0, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:04', 'sampledValue': [{'value': '230.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2356.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11191', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '630292', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"a0fdcb02-33bb-4138-be3e-c8dc40fe70e0","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"32a2cf35-b618-432d-bde3-91b8e6029350","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:14","sampledValue":[{"value":"230.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2358.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11225","measurand":"Power.Active.Export","unit":"W"},{"value":"633431","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=32a2cf35-b618-432d-bde3-91b8e6029350, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:14', 'sampledValue': [{'value': '230.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2358.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11225', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '633431', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"32a2cf35-b618-432d-bde3-91b8e6029350","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"c1ca3e9c-11bc-4087-a354-e8a7f383f003","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:24","sampledValue":[{"value":"230.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2350.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11167","measurand":"Power.Active.Export","unit":"W"},{"value":"636562","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c1ca3e9c-11bc-4087-a354-e8a7f383f003, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:24', 'sampledValue': [{'value': '230.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '236.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2350.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11167', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '636562', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"c1ca3e9c-11bc-4087-a354-e8a7f383f003","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"d1986eb2-53ee-4a2d-8176-b58fe86824f6","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:32:24"}]
+INFO:ocpp:1: send [3,"d1986eb2-53ee-4a2d-8176-b58fe86824f6",{}]
+INFO:ocpp:1: receive message [2,"9c1bd599-058b-4919-9042-67863c79d394","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:34","sampledValue":[{"value":"230.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2345.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11230","measurand":"Power.Active.Export","unit":"W"},{"value":"639698","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=9c1bd599-058b-4919-9042-67863c79d394, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:34', 'sampledValue': [{'value': '230.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2345.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11230', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '639698', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"9c1bd599-058b-4919-9042-67863c79d394","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"70699200-8bbe-401a-a3e7-e4a9bdd76e42","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:44","sampledValue":[{"value":"230.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2342.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11237","measurand":"Power.Active.Export","unit":"W"},{"value":"642840","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=70699200-8bbe-401a-a3e7-e4a9bdd76e42, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:44', 'sampledValue': [{'value': '230.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2342.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11237', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '642840', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"70699200-8bbe-401a-a3e7-e4a9bdd76e42","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"4fc858d5-eac2-4c74-bedb-d2c55446640d","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:54","sampledValue":[{"value":"230.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2345.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11234","measurand":"Power.Active.Export","unit":"W"},{"value":"645987","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=4fc858d5-eac2-4c74-bedb-d2c55446640d, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:54', 'sampledValue': [{'value': '230.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2345.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11234', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '645987', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"4fc858d5-eac2-4c74-bedb-d2c55446640d","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"de07f88e-7e7b-451b-9143-80f1a0ef543c","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:32:54"}]
+INFO:ocpp:1: send [3,"de07f88e-7e7b-451b-9143-80f1a0ef543c",{}]
+INFO:ocpp:1: receive message [2,"9da589aa-b2c2-41c9-be09-aae509960d0a","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:33:04","sampledValue":[{"value":"230.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2348.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11188","measurand":"Power.Active.Export","unit":"W"},{"value":"649124","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=9da589aa-b2c2-41c9-be09-aae509960d0a, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:33:04', 'sampledValue': [{'value': '230.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2348.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11188', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '649124', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"9da589aa-b2c2-41c9-be09-aae509960d0a","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"6d267f33-7ec6-4571-80f9-ec1641636d60","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:33:14","sampledValue":[{"value":"230.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2348.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11185","measurand":"Power.Active.Export","unit":"W"},{"value":"652254","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=6d267f33-7ec6-4571-80f9-ec1641636d60, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:33:14', 'sampledValue': [{'value': '230.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2348.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11185', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '652254', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"6d267f33-7ec6-4571-80f9-ec1641636d60","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"4af7e880-6738-4a60-950a-23bb7d6e4a5e","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:33:24","sampledValue":[{"value":"230.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2353.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11235","measurand":"Power.Active.Export","unit":"W"},{"value":"655390","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=4af7e880-6738-4a60-950a-23bb7d6e4a5e, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:33:24', 'sampledValue': [{'value': '230.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2353.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11235', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '655390', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"4af7e880-6738-4a60-950a-23bb7d6e4a5e","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"e8fba11f-0761-4271-9a2d-b38fc5270b8e","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:33:24"}]
+INFO:ocpp:1: send [3,"e8fba11f-0761-4271-9a2d-b38fc5270b8e",{}]
+INFO:ocpp:1: receive message [2,"6b6b2e86-0664-4744-bad7-ecd00e002fd7","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:33:34","sampledValue":[{"value":"230.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2352.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11259","measurand":"Power.Active.Export","unit":"W"},{"value":"658537","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=6b6b2e86-0664-4744-bad7-ecd00e002fd7, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:33:34', 'sampledValue': [{'value': '230.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2352.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11259', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '658537', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"6b6b2e86-0664-4744-bad7-ecd00e002fd7","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"796a0795-44df-4928-9c00-2f94548adfb1","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:33:44","sampledValue":[{"value":"230.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2350.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11268","measurand":"Power.Active.Export","unit":"W"},{"value":"661692","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=796a0795-44df-4928-9c00-2f94548adfb1, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:33:44', 'sampledValue': [{'value': '230.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2350.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11268', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '661692', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"796a0795-44df-4928-9c00-2f94548adfb1","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"3977a0d8-297f-4a2c-bdf0-33104a8a4f8e","Heartbeat",{}]
+INFO:ocpp:1: send [3,"3977a0d8-297f-4a2c-bdf0-33104a8a4f8e",{"currentTime":"2023-02-23T11:28:50.304614Z"}]
+INFO:ocpp:1: receive message [2,"9211ad17-a4ef-470e-a19f-71ba43344698","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:28:54","sampledValue":[{"value":"230.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2349.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11253","measurand":"Power.Active.Export","unit":"W"},{"value":"664840","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=9211ad17-a4ef-470e-a19f-71ba43344698, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:28:54', 'sampledValue': [{'value': '230.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2349.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11253', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '664840', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"9211ad17-a4ef-470e-a19f-71ba43344698","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"e8ae68a4-8656-44aa-9d8e-961d1535739a","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:28:54"}]
+INFO:ocpp:1: send [3,"e8ae68a4-8656-44aa-9d8e-961d1535739a",{}]
+INFO:ocpp:1: receive message [2,"8f61110e-87f9-4001-b04d-a0edd2d48626","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:04","sampledValue":[{"value":"230.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2347.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11213","measurand":"Power.Active.Export","unit":"W"},{"value":"667987","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=8f61110e-87f9-4001-b04d-a0edd2d48626, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:04', 'sampledValue': [{'value': '230.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2347.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11213', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '667987', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"8f61110e-87f9-4001-b04d-a0edd2d48626","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"05d02e01-c367-45ee-b587-4cfa75f635d3","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:14","sampledValue":[{"value":"230.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2348.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11176","measurand":"Power.Active.Export","unit":"W"},{"value":"671117","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=05d02e01-c367-45ee-b587-4cfa75f635d3, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:14', 'sampledValue': [{'value': '230.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2348.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11176', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '671117', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"05d02e01-c367-45ee-b587-4cfa75f635d3","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"bdca2b92-8388-44cd-b9a6-5fe669bf05cf","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:24","sampledValue":[{"value":"230.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2349.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11261","measurand":"Power.Active.Export","unit":"W"},{"value":"673932","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=bdca2b92-8388-44cd-b9a6-5fe669bf05cf, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:24', 'sampledValue': [{'value': '230.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2349.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11261', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '673932', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"bdca2b92-8388-44cd-b9a6-5fe669bf05cf","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"a7fb5da0-a671-4111-8295-3a9758d01d24","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:29:24"}]
+INFO:ocpp:1: send [3,"a7fb5da0-a671-4111-8295-3a9758d01d24",{}]
+INFO:ocpp:1: receive message [2,"7dd5ac84-df0f-4023-b0ac-cfcfcc426418","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:34","sampledValue":[{"value":"230.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2350.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11234","measurand":"Power.Active.Export","unit":"W"},{"value":"677082","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=7dd5ac84-df0f-4023-b0ac-cfcfcc426418, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:34', 'sampledValue': [{'value': '230.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2350.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11234', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '677082', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"7dd5ac84-df0f-4023-b0ac-cfcfcc426418","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"291b8421-cf1e-4079-9b5a-4d36d5395ce8","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:44","sampledValue":[{"value":"230.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2348.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11178","measurand":"Power.Active.Export","unit":"W"},{"value":"680214","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=291b8421-cf1e-4079-9b5a-4d36d5395ce8, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:44', 'sampledValue': [{'value': '230.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2348.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11178', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '680214', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"291b8421-cf1e-4079-9b5a-4d36d5395ce8","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"0641afcf-10b1-4b4b-9237-de1c1b86643e","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:29:54","sampledValue":[{"value":"230.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2346.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11258","measurand":"Power.Active.Export","unit":"W"},{"value":"683356","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=0641afcf-10b1-4b4b-9237-de1c1b86643e, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:29:54', 'sampledValue': [{'value': '230.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2346.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11258', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '683356', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"0641afcf-10b1-4b4b-9237-de1c1b86643e","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"03158ee1-8b69-4d5b-b569-660e662d4fca","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:29:54"}]
+INFO:ocpp:1: send [3,"03158ee1-8b69-4d5b-b569-660e662d4fca",{}]
+INFO:ocpp:1: receive message [2,"c4874933-30b0-457b-9bd1-ccc7124813a1","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:04","sampledValue":[{"value":"230.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2342.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11195","measurand":"Power.Active.Export","unit":"W"},{"value":"686494","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c4874933-30b0-457b-9bd1-ccc7124813a1, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:04', 'sampledValue': [{'value': '230.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2342.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11195', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '686494', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"c4874933-30b0-457b-9bd1-ccc7124813a1","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"88339a48-56c7-488e-81cf-5882c53cd6cf","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:14","sampledValue":[{"value":"230.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2342.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11273","measurand":"Power.Active.Export","unit":"W"},{"value":"689639","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=88339a48-56c7-488e-81cf-5882c53cd6cf, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:14', 'sampledValue': [{'value': '230.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2342.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11273', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '689639', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"88339a48-56c7-488e-81cf-5882c53cd6cf","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"9d173c3c-279b-482f-aa33-e43383f0b9be","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:24","sampledValue":[{"value":"230.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2342.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11241","measurand":"Power.Active.Export","unit":"W"},{"value":"692788","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=9d173c3c-279b-482f-aa33-e43383f0b9be, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:24', 'sampledValue': [{'value': '230.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2342.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11241', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '692788', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"9d173c3c-279b-482f-aa33-e43383f0b9be","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"72c719fb-9762-403f-ba40-093a41e8ef29","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:30:24"}]
+INFO:ocpp:1: send [3,"72c719fb-9762-403f-ba40-093a41e8ef29",{}]
+INFO:ocpp:1: receive message [2,"c44e16bb-9c25-427a-a804-ad2462429f38","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:34","sampledValue":[{"value":"230.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2349.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11234","measurand":"Power.Active.Export","unit":"W"},{"value":"695937","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c44e16bb-9c25-427a-a804-ad2462429f38, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:34', 'sampledValue': [{'value': '230.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2349.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11234', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '695937', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"c44e16bb-9c25-427a-a804-ad2462429f38","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"60bd8fe9-071a-4ca5-b770-bc251ae58474","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:44","sampledValue":[{"value":"230.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2349.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11231","measurand":"Power.Active.Export","unit":"W"},{"value":"699080","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=60bd8fe9-071a-4ca5-b770-bc251ae58474, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:44', 'sampledValue': [{'value': '230.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2349.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11231', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '699080', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"60bd8fe9-071a-4ca5-b770-bc251ae58474","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"1d08a034-cdfa-46bf-a394-dc9824ad059b","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:30:54","sampledValue":[{"value":"229.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2349.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11191","measurand":"Power.Active.Export","unit":"W"},{"value":"702221","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=1d08a034-cdfa-46bf-a394-dc9824ad059b, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:30:54', 'sampledValue': [{'value': '229.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2349.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11191', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '702221', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"1d08a034-cdfa-46bf-a394-dc9824ad059b","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"87577359-6a89-4737-80df-d7f81f250795","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:30:54"}]
+INFO:ocpp:1: send [3,"87577359-6a89-4737-80df-d7f81f250795",{}]
+INFO:ocpp:1: receive message [2,"d8a0589b-6796-4e26-aee6-caf4784d69d6","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:04","sampledValue":[{"value":"230.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2351.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11229","measurand":"Power.Active.Export","unit":"W"},{"value":"705352","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=d8a0589b-6796-4e26-aee6-caf4784d69d6, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:04', 'sampledValue': [{'value': '230.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2351.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11229', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '705352', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"d8a0589b-6796-4e26-aee6-caf4784d69d6","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"3f1b1ec7-25d9-4492-9605-d9c86e74f480","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:14","sampledValue":[{"value":"230.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2354.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11274","measurand":"Power.Active.Export","unit":"W"},{"value":"708497","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=3f1b1ec7-25d9-4492-9605-d9c86e74f480, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:14', 'sampledValue': [{'value': '230.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2354.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11274', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '708497', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"3f1b1ec7-25d9-4492-9605-d9c86e74f480","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"7dce2428-83d7-461e-9543-832bdda30326","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:24","sampledValue":[{"value":"230.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2352.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11176","measurand":"Power.Active.Export","unit":"W"},{"value":"711638","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=7dce2428-83d7-461e-9543-832bdda30326, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:24', 'sampledValue': [{'value': '230.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2352.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11176', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '711638', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"7dce2428-83d7-461e-9543-832bdda30326","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"cbba28f2-b8c3-475b-8d43-f515613d5b8b","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:31:24"}]
+INFO:ocpp:1: send [3,"cbba28f2-b8c3-475b-8d43-f515613d5b8b",{}]
+INFO:ocpp:1: receive message [2,"824d96ae-151e-4aa7-979a-29e19201b941","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:34","sampledValue":[{"value":"230.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"159.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2353.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"159.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11175","measurand":"Power.Active.Export","unit":"W"},{"value":"714763","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=824d96ae-151e-4aa7-979a-29e19201b941, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:34', 'sampledValue': [{'value': '230.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2353.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '159.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11175', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '714763', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"824d96ae-151e-4aa7-979a-29e19201b941","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"f620c01d-2d27-45c3-ba50-e5b1a21717dd","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:44","sampledValue":[{"value":"230.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2357.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11241","measurand":"Power.Active.Export","unit":"W"},{"value":"717900","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f620c01d-2d27-45c3-ba50-e5b1a21717dd, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:44', 'sampledValue': [{'value': '230.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2357.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11241', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '717900', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"f620c01d-2d27-45c3-ba50-e5b1a21717dd","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"4c383c6d-069a-4a31-b5d2-bb7d2f2fb2b0","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:31:54","sampledValue":[{"value":"230.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2356.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11272","measurand":"Power.Active.Export","unit":"W"},{"value":"721043","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=4c383c6d-069a-4a31-b5d2-bb7d2f2fb2b0, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:31:54', 'sampledValue': [{'value': '230.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2356.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11272', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '721043', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"4c383c6d-069a-4a31-b5d2-bb7d2f2fb2b0","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"0d4ef810-ab58-4d05-89b5-a27956ecdadf","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:31:54"}]
+INFO:ocpp:1: send [3,"0d4ef810-ab58-4d05-89b5-a27956ecdadf",{}]
+INFO:ocpp:1: receive message [2,"b3946ebf-6fa0-426e-8798-7ed47135bc80","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:04","sampledValue":[{"value":"230.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2356.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11255","measurand":"Power.Active.Export","unit":"W"},{"value":"723878","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=b3946ebf-6fa0-426e-8798-7ed47135bc80, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:04', 'sampledValue': [{'value': '230.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2356.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11255', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '723878', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"b3946ebf-6fa0-426e-8798-7ed47135bc80","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"1e05d9aa-1dc9-48a0-9338-b21d203a5e08","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:14","sampledValue":[{"value":"230.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2355.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11279","measurand":"Power.Active.Export","unit":"W"},{"value":"727029","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=1e05d9aa-1dc9-48a0-9338-b21d203a5e08, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:14', 'sampledValue': [{'value': '230.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2355.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11279', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '727029', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"1e05d9aa-1dc9-48a0-9338-b21d203a5e08","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"b1f0b362-3e48-496e-ac85-23a0e17af826","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:24","sampledValue":[{"value":"231.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2352.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11272","measurand":"Power.Active.Export","unit":"W"},{"value":"730175","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=b1f0b362-3e48-496e-ac85-23a0e17af826, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:24', 'sampledValue': [{'value': '231.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2352.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11272', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '730175', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"b1f0b362-3e48-496e-ac85-23a0e17af826","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"cc3ea028-7bb0-416f-b66e-c1e86af98e2e","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:32:24"}]
+INFO:ocpp:1: send [3,"cc3ea028-7bb0-416f-b66e-c1e86af98e2e",{}]
+INFO:ocpp:1: receive message [2,"e1c9905f-0d32-4bc6-9e85-f8b61f16a5ca","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:34","sampledValue":[{"value":"231.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2353.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11277","measurand":"Power.Active.Export","unit":"W"},{"value":"733324","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=e1c9905f-0d32-4bc6-9e85-f8b61f16a5ca, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:34', 'sampledValue': [{'value': '231.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2353.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11277', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '733324', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"e1c9905f-0d32-4bc6-9e85-f8b61f16a5ca","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"4d7c47e3-5a4c-417b-82f1-08ca8d09c59f","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:32:44","sampledValue":[{"value":"231.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"235.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2354.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11281","measurand":"Power.Active.Export","unit":"W"},{"value":"736477","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=4d7c47e3-5a4c-417b-82f1-08ca8d09c59f, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:32:44', 'sampledValue': [{'value': '231.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '235.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2354.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11281', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '736477', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"4d7c47e3-5a4c-417b-82f1-08ca8d09c59f","InternalError","An unexpected error occurred.",{}]
+INFO:websockets.server:connection closed
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"a16ecbef-0e8a-4938-beaf-89d28504c55d","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"a16ecbef-0e8a-4938-beaf-89d28504c55d",{"currentTime":"2023-02-23T11:38:19.881401","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"191f17e2-c898-4aa8-9df9-d36539dbd1e3","Heartbeat",{}]
+INFO:ocpp:1: send [3,"191f17e2-c898-4aa8-9df9-d36539dbd1e3",{"currentTime":"2023-02-23T11:38:19.881401Z"}]
+INFO:ocpp:1: receive message [2,"00169a27-5bf9-45dc-8eaa-a9b4e5505fd5","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:38:19","sampledValue":[{"value":"231.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2347.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11285","measurand":"Power.Active.Export","unit":"W"},{"value":"773299","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=00169a27-5bf9-45dc-8eaa-a9b4e5505fd5, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:38:19', 'sampledValue': [{'value': '231.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2347.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11285', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '773299', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"00169a27-5bf9-45dc-8eaa-a9b4e5505fd5","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"4ef75ca5-34aa-464a-b9c9-1cf7359df9b8","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:38:19"}]
+INFO:ocpp:1: send [3,"4ef75ca5-34aa-464a-b9c9-1cf7359df9b8",{}]
+INFO:ocpp:1: receive message [2,"460a61f8-9ed1-4686-99f7-375c3c95263e","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:38:28","sampledValue":[{"value":"231.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2347.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11273","measurand":"Power.Active.Export","unit":"W"},{"value":"776446","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=460a61f8-9ed1-4686-99f7-375c3c95263e, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:38:28', 'sampledValue': [{'value': '231.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2347.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11273', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '776446', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"460a61f8-9ed1-4686-99f7-375c3c95263e","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"db57009d-aa56-41c9-9e34-32d3eb93cdd1","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:38:38","sampledValue":[{"value":"232.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2343.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11285","measurand":"Power.Active.Export","unit":"W"},{"value":"779597","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=db57009d-aa56-41c9-9e34-32d3eb93cdd1, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:38:38', 'sampledValue': [{'value': '232.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2343.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11285', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '779597', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"db57009d-aa56-41c9-9e34-32d3eb93cdd1","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"e33f40f5-115d-4b30-9583-9d12019aa1f1","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:38:48","sampledValue":[{"value":"232.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"232.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2347.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11256","measurand":"Power.Active.Export","unit":"W"},{"value":"782765","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=e33f40f5-115d-4b30-9583-9d12019aa1f1, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:38:48', 'sampledValue': [{'value': '232.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '232.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2347.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11256', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '782765', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"e33f40f5-115d-4b30-9583-9d12019aa1f1","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"57c9f3a9-31f6-4d37-b580-2c8d97cc6c18","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:38:48"}]
+INFO:ocpp:1: send [3,"57c9f3a9-31f6-4d37-b580-2c8d97cc6c18",{}]
+INFO:ocpp:1: receive message [2,"b8449c3a-a70b-46cb-9096-9ed24ca7594b","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:38:58","sampledValue":[{"value":"232.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"232.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2355.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11229","measurand":"Power.Active.Export","unit":"W"},{"value":"785916","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=b8449c3a-a70b-46cb-9096-9ed24ca7594b, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:38:58', 'sampledValue': [{'value': '232.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '232.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2355.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11229', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '785916', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"b8449c3a-a70b-46cb-9096-9ed24ca7594b","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"322b3423-2ab5-4ad8-9802-9307202a9764","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:39:08","sampledValue":[{"value":"232.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2352.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11323","measurand":"Power.Active.Export","unit":"W"},{"value":"789062","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=322b3423-2ab5-4ad8-9802-9307202a9764, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:39:08', 'sampledValue': [{'value': '232.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2352.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11323', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '789062', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"322b3423-2ab5-4ad8-9802-9307202a9764","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"015524d6-38a9-4dbf-83b4-cd6b4d68995b","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:39:18","sampledValue":[{"value":"231.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2352.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11266","measurand":"Power.Active.Export","unit":"W"},{"value":"791905","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=015524d6-38a9-4dbf-83b4-cd6b4d68995b, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:39:18', 'sampledValue': [{'value': '231.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2352.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11266', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '791905', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"015524d6-38a9-4dbf-83b4-cd6b4d68995b","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"d77958f6-c4a8-4008-8e6f-14aabc67485e","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:39:18"}]
+INFO:ocpp:1: send [3,"d77958f6-c4a8-4008-8e6f-14aabc67485e",{}]
+INFO:ocpp:1: receive message [2,"4900c4ab-5399-47c1-81f9-3a5ada5e5437","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:39:28","sampledValue":[{"value":"231.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2352.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11252","measurand":"Power.Active.Export","unit":"W"},{"value":"795054","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=4900c4ab-5399-47c1-81f9-3a5ada5e5437, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:39:28', 'sampledValue': [{'value': '231.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2352.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11252', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '795054', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"4900c4ab-5399-47c1-81f9-3a5ada5e5437","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"3b3f5fd8-3ce5-432e-b4e7-5be7bd4404cc","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:39:38","sampledValue":[{"value":"231.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2350.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11258","measurand":"Power.Active.Export","unit":"W"},{"value":"798195","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=3b3f5fd8-3ce5-432e-b4e7-5be7bd4404cc, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:39:38', 'sampledValue': [{'value': '231.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2350.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11258', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '798195', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"3b3f5fd8-3ce5-432e-b4e7-5be7bd4404cc","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"68ea7e14-8e98-411b-b9cb-d3356ccc1384","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:39:48","sampledValue":[{"value":"231.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2352.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11321","measurand":"Power.Active.Export","unit":"W"},{"value":"801355","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=68ea7e14-8e98-411b-b9cb-d3356ccc1384, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:39:48', 'sampledValue': [{'value': '231.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2352.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11321', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '801355', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"68ea7e14-8e98-411b-b9cb-d3356ccc1384","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"4166bd37-d84a-4ccf-8e08-8c7e015bccbf","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:39:48"}]
+INFO:ocpp:1: send [3,"4166bd37-d84a-4ccf-8e08-8c7e015bccbf",{}]
+INFO:ocpp:1: receive message [2,"24faec5c-228f-438f-a213-25dcea3b86cf","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:39:58","sampledValue":[{"value":"232.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2350.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11263","measurand":"Power.Active.Export","unit":"W"},{"value":"804513","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=24faec5c-228f-438f-a213-25dcea3b86cf, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:39:58', 'sampledValue': [{'value': '232.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2350.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11263', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '804513', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"24faec5c-228f-438f-a213-25dcea3b86cf","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"e803d6f1-9c74-492f-872b-86f5445b92c9","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:40:08","sampledValue":[{"value":"232.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"234.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2346.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11296","measurand":"Power.Active.Export","unit":"W"},{"value":"807659","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=e803d6f1-9c74-492f-872b-86f5445b92c9, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:40:08', 'sampledValue': [{'value': '232.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2346.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11296', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '807659', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"e803d6f1-9c74-492f-872b-86f5445b92c9","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"d678e353-83d9-4727-93cd-f8753d6322fb","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:40:18","sampledValue":[{"value":"231.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2344.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11240","measurand":"Power.Active.Export","unit":"W"},{"value":"810814","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=d678e353-83d9-4727-93cd-f8753d6322fb, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:40:18', 'sampledValue': [{'value': '231.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2344.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11240', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '810814', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"d678e353-83d9-4727-93cd-f8753d6322fb","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"b7a79a99-47c3-4b37-8d98-66f202457c0f","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:40:18"}]
+INFO:ocpp:1: send [3,"b7a79a99-47c3-4b37-8d98-66f202457c0f",{}]
+INFO:ocpp:1: receive message [2,"af54f64a-f2d7-43a6-aa2f-e9d4fc891764","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:40:28","sampledValue":[{"value":"231.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2343.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11291","measurand":"Power.Active.Export","unit":"W"},{"value":"813961","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=af54f64a-f2d7-43a6-aa2f-e9d4fc891764, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:40:28', 'sampledValue': [{'value': '231.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2343.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11291', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '813961', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    meter = cleaner(meter_value)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"af54f64a-f2d7-43a6-aa2f-e9d4fc891764","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"3f8a7958-dbc1-4d6a-b55d-983204c2d427","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:40:38","sampledValue":[{"value":"232.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2350.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11297","measurand":"Power.Active.Export","unit":"W"},{"value":"817123","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=3f8a7958-dbc1-4d6a-b55d-983204c2d427, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:40:38', 'sampledValue': [{'value': '232.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2350.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11297', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '817123', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"3f8a7958-dbc1-4d6a-b55d-983204c2d427","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"95395f88-54ac-428f-96e7-a6cdac2626ac","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:40:48","sampledValue":[{"value":"231.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2350.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.9","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11255","measurand":"Power.Active.Export","unit":"W"},{"value":"820268","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=95395f88-54ac-428f-96e7-a6cdac2626ac, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:40:48', 'sampledValue': [{'value': '231.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2350.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11255', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '820268', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"95395f88-54ac-428f-96e7-a6cdac2626ac","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"1b6d5be7-c3d0-4c2b-aac1-e90635bf5cef","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:40:48"}]
+INFO:ocpp:1: send [3,"1b6d5be7-c3d0-4c2b-aac1-e90635bf5cef",{}]
+INFO:ocpp:1: receive message [2,"0bdc5acc-0899-4eb4-a662-b54b9e24398f","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:40:58","sampledValue":[{"value":"232.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2348.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.5","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11300","measurand":"Power.Active.Export","unit":"W"},{"value":"823422","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=0bdc5acc-0899-4eb4-a662-b54b9e24398f, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:40:58', 'sampledValue': [{'value': '232.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2348.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11300', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '823422', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"0bdc5acc-0899-4eb4-a662-b54b9e24398f","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"53b2c2eb-8261-4ee4-9929-fb9792723aa7","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:41:08","sampledValue":[{"value":"232.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.3","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"232.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"235.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2353.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.6","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11306","measurand":"Power.Active.Export","unit":"W"},{"value":"826582","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=53b2c2eb-8261-4ee4-9929-fb9792723aa7, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:41:08', 'sampledValue': [{'value': '232.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '232.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '235.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2353.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11306', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '826582', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"53b2c2eb-8261-4ee4-9929-fb9792723aa7","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"ad54902d-13b4-41a1-a6d5-252aee788cdd","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:41:18","sampledValue":[{"value":"232.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2345.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.7","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11304","measurand":"Power.Active.Export","unit":"W"},{"value":"829739","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=ad54902d-13b4-41a1-a6d5-252aee788cdd, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:41:18', 'sampledValue': [{'value': '232.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2345.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11304', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '829739', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"ad54902d-13b4-41a1-a6d5-252aee788cdd","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"404e92dc-87ee-45d4-9bb9-8fbd6ffb98ac","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:41:18"}]
+INFO:ocpp:1: send [3,"404e92dc-87ee-45d4-9bb9-8fbd6ffb98ac",{}]
+INFO:ocpp:1: receive message [2,"32719f5e-6479-4000-8dcc-9b871e1fd6b0","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:41:28","sampledValue":[{"value":"232.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"161.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"233.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2337.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11263","measurand":"Power.Active.Export","unit":"W"},{"value":"832898","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=32719f5e-6479-4000-8dcc-9b871e1fd6b0, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:41:28', 'sampledValue': [{'value': '232.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '161.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11263', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '832898', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"32719f5e-6479-4000-8dcc-9b871e1fd6b0","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"522a1f13-423d-4dce-9010-a87cfece2cf7","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:41:38","sampledValue":[{"value":"232.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.4","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"233.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2339.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11240","measurand":"Power.Active.Export","unit":"W"},{"value":"836042","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=522a1f13-423d-4dce-9010-a87cfece2cf7, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:41:38', 'sampledValue': [{'value': '232.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2339.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11240', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '836042', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"522a1f13-423d-4dce-9010-a87cfece2cf7","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"f508884b-f608-42de-a45f-72eb335aed59","MeterValues",{"connectorId":1,"transactionId":0,"meterValue":[{"timestamp":"2023-02-23T11:41:48","sampledValue":[{"value":"232.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"160.8","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"233.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"234.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2344.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"161.1","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"17","measurand":"Temperature","unit":"Celsius"},{"value":"11276","measurand":"Power.Active.Export","unit":"W"},{"value":"839188","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f508884b-f608-42de-a45f-72eb335aed59, action=MeterValues, payload={'connectorId': 1, 'transactionId': 0, 'meterValue': [{'timestamp': '2023-02-23T11:41:48', 'sampledValue': [{'value': '232.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '234.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2344.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11276', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '839188', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 198, in _handle_call
+    response = handler(**snake_case_payload)
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/routing.py", line 48, in inner
+    return func(*args, **kwargs)
+  File "/home/elite/Workplace/quanto/app.py", line 216, in on_meter_values
+    print("kwarg : %s" % kwarg)
+  File "/home/elite/Workplace/quanto/meter_values_sanitizer.py", line 3, in cleaner
+    l1v_value = l1v["value"]
+KeyError: 'value'
+INFO:ocpp:1: send [4,"f508884b-f608-42de-a45f-72eb335aed59","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"70342ab1-f458-4cca-9ac8-ee45dab86482","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Charging","timestamp":"2023-02-23T11:41:48"}]
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:server listening on 10.45.2.39:9000

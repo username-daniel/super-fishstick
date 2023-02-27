@@ -1,0 +1,7 @@
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"e1bef72b-8371-4db7-816e-baae2919ef02","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"e1bef72b-8371-4db7-816e-baae2919ef02",{"currentTime":"2023-02-27T10:15:32.152178","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"3540248a-850d-4d5a-803e-9a5f1aaadd14","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-27T10:15:32","sampledValue":[{"value":"230.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2366.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"8","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+INFO:ocpp:1: send [3,"3540248a-850d-4d5a-803e-9a5f1aaadd14",{}]
+INFO:websockets.server:connection closed

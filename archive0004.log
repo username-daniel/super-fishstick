@@ -1,0 +1,1406 @@
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"08ae57ab-209e-4900-9a7f-5c335dd37376","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"08ae57ab-209e-4900-9a7f-5c335dd37376",{"currentTime":"2023-02-23T14:32:50.370423","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"cf8d95c9-93a5-4159-ba6b-0acc6535e8f7","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:32:50","sampledValue":[{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2381.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"1","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=cf8d95c9-93a5-4159-ba6b-0acc6535e8f7, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:32:50', 'sampledValue': [{'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2381.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '1', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"cf8d95c9-93a5-4159-ba6b-0acc6535e8f7","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"89738f98-7c28-4c6c-983b-00cebe0f08d0","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:32:50"}]
+INFO:ocpp:1: send [3,"89738f98-7c28-4c6c-983b-00cebe0f08d0",{}]
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"ea81e2e0-e97a-406c-ada1-1e94e4e8efd2","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"ea81e2e0-e97a-406c-ada1-1e94e4e8efd2",{"currentTime":"2023-02-23T14:32:50.370423","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"11f8613a-a467-4bb7-85e3-d3659710a114","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:32:50","sampledValue":[{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2383.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=11f8613a-a467-4bb7-85e3-d3659710a114, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:32:50', 'sampledValue': [{'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2383.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"11f8613a-a467-4bb7-85e3-d3659710a114","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"d0e328f7-9a72-4b32-958c-b3c86f39f9b8","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:33:00","sampledValue":[{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"16","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=d0e328f7-9a72-4b32-958c-b3c86f39f9b8, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:33:00', 'sampledValue': [{'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '16', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"d0e328f7-9a72-4b32-958c-b3c86f39f9b8","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"0fe7f52e-0652-45f7-84da-959f6e41169c","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:33:10"}]
+INFO:ocpp:1: send [3,"0fe7f52e-0652-45f7-84da-959f6e41169c",{}]
+INFO:ocpp:1: receive message [2,"f6108adf-988a-4d6c-b812-4b361cf93c51","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:33:10","sampledValue":[{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2380.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f6108adf-988a-4d6c-b812-4b361cf93c51, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:33:10', 'sampledValue': [{'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2380.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"f6108adf-988a-4d6c-b812-4b361cf93c51","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"5c1e541c-07ad-471d-a8aa-3d1b6f928f2c","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:33:20","sampledValue":[{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2382.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=5c1e541c-07ad-471d-a8aa-3d1b6f928f2c, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:33:20', 'sampledValue': [{'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2382.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"5c1e541c-07ad-471d-a8aa-3d1b6f928f2c","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"c2ed3d58-555d-472c-b1cd-c618f522053b","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:33:30","sampledValue":[{"value":"235.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2381.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c2ed3d58-555d-472c-b1cd-c618f522053b, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:33:30', 'sampledValue': [{'value': '235.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2381.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"c2ed3d58-555d-472c-b1cd-c618f522053b","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"a983faa0-dc00-4d09-a3a0-0ea9b3b87141","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:33:50","sampledValue":[{"value":"235.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.2","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2381.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"4","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=a983faa0-dc00-4d09-a3a0-0ea9b3b87141, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:33:50', 'sampledValue': [{'value': '235.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2381.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '4', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"a983faa0-dc00-4d09-a3a0-0ea9b3b87141","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"764f7883-60da-43bc-9e7d-b423877d5f8f","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:34:00","sampledValue":[{"value":"235.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2375.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=764f7883-60da-43bc-9e7d-b423877d5f8f, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:34:00', 'sampledValue': [{'value': '235.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2375.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"764f7883-60da-43bc-9e7d-b423877d5f8f","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"55fa265f-b225-49fa-93a1-8bf8942b68f5","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:34:10"}]
+INFO:ocpp:1: send [3,"55fa265f-b225-49fa-93a1-8bf8942b68f5",{}]
+INFO:ocpp:1: receive message [2,"842a9133-c923-456c-a76f-36f4eedd4f31","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:34:11","sampledValue":[{"value":"235.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2378.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=842a9133-c923-456c-a76f-36f4eedd4f31, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:34:11', 'sampledValue': [{'value': '235.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2378.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"842a9133-c923-456c-a76f-36f4eedd4f31","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"47eedddb-2894-4a6a-8ab1-e5062cbccbef","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:34:21","sampledValue":[{"value":"235.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2382.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=47eedddb-2894-4a6a-8ab1-e5062cbccbef, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:34:21', 'sampledValue': [{'value': '235.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2382.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"47eedddb-2894-4a6a-8ab1-e5062cbccbef","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"ce3385c9-58f0-41d4-a02f-826d3a5df063","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:34:31","sampledValue":[{"value":"235.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"236.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2369.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=ce3385c9-58f0-41d4-a02f-826d3a5df063, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:34:31', 'sampledValue': [{'value': '235.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '236.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2369.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"ce3385c9-58f0-41d4-a02f-826d3a5df063","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"c9ce5aea-c6e6-478b-aa74-a431471a4e5b","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:34:40"}]
+INFO:ocpp:1: send [3,"c9ce5aea-c6e6-478b-aa74-a431471a4e5b",{}]
+INFO:ocpp:1: receive message [2,"2c56de80-d5db-4d54-9a0b-9e361efd79ca","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:34:41","sampledValue":[{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2376.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=2c56de80-d5db-4d54-9a0b-9e361efd79ca, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:34:41', 'sampledValue': [{'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2376.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"2c56de80-d5db-4d54-9a0b-9e361efd79ca","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"f3f9195d-68ec-47f5-b090-7aa487b8fa2a","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:34:51","sampledValue":[{"value":"235.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2379.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f3f9195d-68ec-47f5-b090-7aa487b8fa2a, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:34:51', 'sampledValue': [{'value': '235.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2379.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"f3f9195d-68ec-47f5-b090-7aa487b8fa2a","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"a7c7c958-ca8e-419e-a5ae-caf67f90854e","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:35:01","sampledValue":[{"value":"235.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2382.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=a7c7c958-ca8e-419e-a5ae-caf67f90854e, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:35:01', 'sampledValue': [{'value': '235.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2382.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"a7c7c958-ca8e-419e-a5ae-caf67f90854e","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"50130991-60e4-4263-87d0-ea5f35870f7d","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:35:10"}]
+INFO:ocpp:1: send [3,"50130991-60e4-4263-87d0-ea5f35870f7d",{}]
+INFO:ocpp:1: receive message [2,"f5c35db6-ae02-44d1-9a95-feda7021cd00","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:35:11","sampledValue":[{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2378.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f5c35db6-ae02-44d1-9a95-feda7021cd00, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:35:11', 'sampledValue': [{'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2378.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"f5c35db6-ae02-44d1-9a95-feda7021cd00","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"48c7e37d-3ea7-40fa-aafa-d9051319da01","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:35:21","sampledValue":[{"value":"235.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2382.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=48c7e37d-3ea7-40fa-aafa-d9051319da01, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:35:21', 'sampledValue': [{'value': '235.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2382.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"48c7e37d-3ea7-40fa-aafa-d9051319da01","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"c7e3bc11-ca55-4b26-bcc3-9707a097a946","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:35:31","sampledValue":[{"value":"234.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2385.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c7e3bc11-ca55-4b26-bcc3-9707a097a946, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:35:31', 'sampledValue': [{'value': '234.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2385.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp,
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"c7e3bc11-ca55-4b26-bcc3-9707a097a946","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"2afbf92f-e465-420b-9b44-48b8d579b95c","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:35:40"}]
+INFO:ocpp:1: send [3,"2afbf92f-e465-420b-9b44-48b8d579b95c",{}]
+INFO:ocpp:1: receive message [2,"8a006d3f-9301-475f-b542-5a1ce9bba890","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:35:41","sampledValue":[{"value":"234.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2384.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=8a006d3f-9301-475f-b542-5a1ce9bba890, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:35:41', 'sampledValue': [{'value': '234.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2384.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"8a006d3f-9301-475f-b542-5a1ce9bba890","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"e0ec24ce-87de-49fb-b128-24812c384eb0","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:35:51","sampledValue":[{"value":"234.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2380.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=e0ec24ce-87de-49fb-b128-24812c384eb0, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:35:51', 'sampledValue': [{'value': '234.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2380.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"e0ec24ce-87de-49fb-b128-24812c384eb0","InternalError","An unexpected error occurred.",{}]
+INFO:websockets.server:connection closed
+INFO:websockets.server:connection closed
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"7daf59c5-1ade-482b-b18f-43d70fe46426","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"7daf59c5-1ade-482b-b18f-43d70fe46426",{"currentTime":"2023-02-23T14:37:22.864182","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"eb47b805-f6ac-4570-86b1-10b60a8eee71","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:37:22","sampledValue":[{"value":"236.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2376.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=eb47b805-f6ac-4570-86b1-10b60a8eee71, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:37:22', 'sampledValue': [{'value': '236.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2376.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"eb47b805-f6ac-4570-86b1-10b60a8eee71","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"d6aff31b-8b21-4652-87a2-4a6dfcae7ad6","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:37:32","sampledValue":[{"value":"236.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2386.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=d6aff31b-8b21-4652-87a2-4a6dfcae7ad6, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:37:32', 'sampledValue': [{'value': '236.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2386.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"d6aff31b-8b21-4652-87a2-4a6dfcae7ad6","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"6d075845-c7a8-41f4-9775-1a1df37fb57d","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:37:35"}]
+INFO:ocpp:1: send [3,"6d075845-c7a8-41f4-9775-1a1df37fb57d",{}]
+INFO:ocpp:1: receive message [2,"864734ac-5acb-43df-8281-242bf5276908","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:37:42","sampledValue":[{"value":"236.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2386.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=864734ac-5acb-43df-8281-242bf5276908, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:37:42', 'sampledValue': [{'value': '236.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2386.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"864734ac-5acb-43df-8281-242bf5276908","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"ac6a8805-b2fd-42b5-ade6-0774b2656db0","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:37:52","sampledValue":[{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2383.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=ac6a8805-b2fd-42b5-ade6-0774b2656db0, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:37:52', 'sampledValue': [{'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2383.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"ac6a8805-b2fd-42b5-ade6-0774b2656db0","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"f59b3298-d3bf-4528-9294-8282e6674360","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:38:02","sampledValue":[{"value":"236.6","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2382.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f59b3298-d3bf-4528-9294-8282e6674360, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:38:02', 'sampledValue': [{'value': '236.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2382.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"f59b3298-d3bf-4528-9294-8282e6674360","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"bd5704fa-4fec-4396-bae6-dde286f61fe3","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:38:05"}]
+INFO:ocpp:1: send [3,"bd5704fa-4fec-4396-bae6-dde286f61fe3",{}]
+INFO:ocpp:1: receive message [2,"17c98ca4-417d-41c5-a196-bef8857eb30a","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:38:12","sampledValue":[{"value":"236.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2384.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=17c98ca4-417d-41c5-a196-bef8857eb30a, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:38:12', 'sampledValue': [{'value': '236.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2384.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"17c98ca4-417d-41c5-a196-bef8857eb30a","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"f0909aae-3ae9-4cc0-9105-5652643ac6fe","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:38:22","sampledValue":[{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2387.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f0909aae-3ae9-4cc0-9105-5652643ac6fe, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:38:22', 'sampledValue': [{'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2387.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"f0909aae-3ae9-4cc0-9105-5652643ac6fe","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"b050a8cc-f619-40f2-86f5-bf1b853d74a5","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:38:32","sampledValue":[{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2388.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=b050a8cc-f619-40f2-86f5-bf1b853d74a5, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:38:32', 'sampledValue': [{'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2388.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"b050a8cc-f619-40f2-86f5-bf1b853d74a5","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"76a36d07-28a3-421f-8aa2-6f3c22c5bc2b","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:38:35"}]
+INFO:ocpp:1: send [3,"76a36d07-28a3-421f-8aa2-6f3c22c5bc2b",{}]
+INFO:ocpp:1: receive message [2,"6b2b389f-76fb-496d-9574-5cd50cde29cc","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:38:42","sampledValue":[{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2388.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=6b2b389f-76fb-496d-9574-5cd50cde29cc, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:38:42', 'sampledValue': [{'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2388.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"6b2b389f-76fb-496d-9574-5cd50cde29cc","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"19676e39-cf78-4895-91c3-80fbf83e4579","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:38:52","sampledValue":[{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"237.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2388.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=19676e39-cf78-4895-91c3-80fbf83e4579, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:38:52', 'sampledValue': [{'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2388.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"19676e39-cf78-4895-91c3-80fbf83e4579","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"c934c357-ad93-4b6b-8355-2c21d2e26ccf","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:39:02","sampledValue":[{"value":"236.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2382.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c934c357-ad93-4b6b-8355-2c21d2e26ccf, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:39:02', 'sampledValue': [{'value': '236.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2382.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"c934c357-ad93-4b6b-8355-2c21d2e26ccf","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"bd170742-f7ab-4a23-a092-108f60c97040","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:39:05"}]
+INFO:ocpp:1: send [3,"bd170742-f7ab-4a23-a092-108f60c97040",{}]
+INFO:ocpp:1: receive message [2,"d36a343e-e0d9-490a-8d2c-c8b06bb955b0","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:39:12","sampledValue":[{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"239.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2390.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=d36a343e-e0d9-490a-8d2c-c8b06bb955b0, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:39:12', 'sampledValue': [{'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '239.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2390.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"d36a343e-e0d9-490a-8d2c-c8b06bb955b0","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"ba161167-6a34-4a70-a860-05d9a4ccb3fb","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:39:22","sampledValue":[{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2388.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=ba161167-6a34-4a70-a860-05d9a4ccb3fb, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:39:22', 'sampledValue': [{'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2388.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"ba161167-6a34-4a70-a860-05d9a4ccb3fb","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"6a2b35e4-2a54-4a55-b66c-0a49c1a34e53","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:39:32","sampledValue":[{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2387.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=6a2b35e4-2a54-4a55-b66c-0a49c1a34e53, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:39:32', 'sampledValue': [{'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2387.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"6a2b35e4-2a54-4a55-b66c-0a49c1a34e53","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"6c35ed46-b250-411c-be5b-3ff031446c7b","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:39:35"}]
+INFO:ocpp:1: send [3,"6c35ed46-b250-411c-be5b-3ff031446c7b",{}]
+INFO:websockets.server:connection closed
+INFO:websockets.server:server listening on 10.45.2.39:9000
+INFO:websockets.server:connection open
+INFO:ocpp:1: receive message [2,"3b7fefb3-15e0-4859-80d2-5ea0a3e925e2","BootNotification",{"chargePointModel":"type-2","chargePointVendor":"Teison-AC","chargePointSerialNumber":"AISEN001","firmwareVersion":"V0.0.1"}]
+INFO:ocpp:1: send [3,"3b7fefb3-15e0-4859-80d2-5ea0a3e925e2",{"currentTime":"2023-02-23T14:43:31.399254","interval":300,"status":"Accepted"}]
+INFO:ocpp:1: receive message [2,"5a55ee0b-c8b5-4380-97c5-eff2429d40f6","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:43:32","sampledValue":[{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.9","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2379.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=5a55ee0b-c8b5-4380-97c5-eff2429d40f6, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:43:32', 'sampledValue': [{'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2379.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"5a55ee0b-c8b5-4380-97c5-eff2429d40f6","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"5322358d-b86b-417e-838f-5e7a5f3e2264","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:43:42","sampledValue":[{"value":"235.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2376.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=5322358d-b86b-417e-838f-5e7a5f3e2264, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:43:42', 'sampledValue': [{'value': '235.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2376.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"5322358d-b86b-417e-838f-5e7a5f3e2264","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"aaab8673-70eb-4288-a807-5b0298e445e5","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:43:52","sampledValue":[{"value":"235.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.7","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2371.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=aaab8673-70eb-4288-a807-5b0298e445e5, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:43:52', 'sampledValue': [{'value': '235.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2371.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"aaab8673-70eb-4288-a807-5b0298e445e5","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"ac05ea72-00c2-4757-a53f-942353aca8ae","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:43:52"}]
+INFO:ocpp:1: send [3,"ac05ea72-00c2-4757-a53f-942353aca8ae",{}]
+INFO:ocpp:1: receive message [2,"6935179a-688b-4b67-87d4-e94a02bd6177","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:44:02","sampledValue":[{"value":"235.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=6935179a-688b-4b67-87d4-e94a02bd6177, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:44:02', 'sampledValue': [{'value': '235.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"6935179a-688b-4b67-87d4-e94a02bd6177","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"c6c48cf6-0297-45b7-983d-6e6319683180","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:44:12","sampledValue":[{"value":"235.3","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2381.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c6c48cf6-0297-45b7-983d-6e6319683180, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:44:12', 'sampledValue': [{'value': '235.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2381.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"c6c48cf6-0297-45b7-983d-6e6319683180","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"afd48e60-0920-471a-938d-0f3fc1e82ce4","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:44:22","sampledValue":[{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"240.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.2","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2382.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=afd48e60-0920-471a-938d-0f3fc1e82ce4, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:44:22', 'sampledValue': [{'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '240.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2382.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"afd48e60-0920-471a-938d-0f3fc1e82ce4","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"e4327937-6100-41a6-989c-b249643415fa","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:44:22"}]
+INFO:ocpp:1: send [3,"e4327937-6100-41a6-989c-b249643415fa",{}]
+INFO:ocpp:1: receive message [2,"1c7f9eba-0312-42e8-add9-56ec4a687274","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:44:32","sampledValue":[{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.0","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2380.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=1c7f9eba-0312-42e8-add9-56ec4a687274, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:44:32', 'sampledValue': [{'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2380.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"1c7f9eba-0312-42e8-add9-56ec4a687274","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"a7d12e89-c48a-4360-b546-46374462d153","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:44:42","sampledValue":[{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2383.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=a7d12e89-c48a-4360-b546-46374462d153, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:44:42', 'sampledValue': [{'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2383.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"a7d12e89-c48a-4360-b546-46374462d153","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"90a3be3e-7a30-4737-9d9d-3b346d1c983d","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:44:52","sampledValue":[{"value":"235.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2376.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=90a3be3e-7a30-4737-9d9d-3b346d1c983d, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:44:52', 'sampledValue': [{'value': '235.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2376.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"90a3be3e-7a30-4737-9d9d-3b346d1c983d","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"16023518-c283-49eb-b7a8-244edf32c689","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:44:52"}]
+INFO:ocpp:1: send [3,"16023518-c283-49eb-b7a8-244edf32c689",{}]
+INFO:ocpp:1: receive message [2,"a9aeecf5-ef22-4d69-a79d-af063767dbc8","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:45:02","sampledValue":[{"value":"235.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"238.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2383.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=a9aeecf5-ef22-4d69-a79d-af063767dbc8, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:45:02', 'sampledValue': [{'value': '235.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '238.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2383.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"a9aeecf5-ef22-4d69-a79d-af063767dbc8","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"ead0e329-71f3-4686-8d05-ef375489e92d","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:45:12","sampledValue":[{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=ead0e329-71f3-4686-8d05-ef375489e92d, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:45:12', 'sampledValue': [{'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"ead0e329-71f3-4686-8d05-ef375489e92d","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"618673c9-2919-4756-809a-3cd519149967","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:45:22","sampledValue":[{"value":"236.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2378.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=618673c9-2919-4756-809a-3cd519149967, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:45:22', 'sampledValue': [{'value': '236.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2378.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"618673c9-2919-4756-809a-3cd519149967","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"a55c79f6-5314-425e-984a-87a219c95452","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:45:22"}]
+INFO:ocpp:1: send [3,"a55c79f6-5314-425e-984a-87a219c95452",{}]
+INFO:ocpp:1: receive message [2,"a783d09b-a8d7-4b92-a3e0-e39822b76444","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:45:32","sampledValue":[{"value":"236.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.0","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=a783d09b-a8d7-4b92-a3e0-e39822b76444, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:45:32', 'sampledValue': [{'value': '236.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"a783d09b-a8d7-4b92-a3e0-e39822b76444","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"68969012-eab9-4923-a214-21fd367c1ad8","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:45:42","sampledValue":[{"value":"235.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=68969012-eab9-4923-a214-21fd367c1ad8, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:45:42', 'sampledValue': [{'value': '235.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"68969012-eab9-4923-a214-21fd367c1ad8","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"a71575eb-5e78-47a7-85c8-0f6730ecbe39","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:45:52","sampledValue":[{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=a71575eb-5e78-47a7-85c8-0f6730ecbe39, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:45:52', 'sampledValue': [{'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"a71575eb-5e78-47a7-85c8-0f6730ecbe39","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"c04d8432-1434-41ea-bb3e-b47ced2fa9cb","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:45:52"}]
+INFO:ocpp:1: send [3,"c04d8432-1434-41ea-bb3e-b47ced2fa9cb",{}]
+INFO:ocpp:1: receive message [2,"f97b6b87-ca80-47b5-9527-fd19d05d940a","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:46:02","sampledValue":[{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.1","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=f97b6b87-ca80-47b5-9527-fd19d05d940a, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:46:02', 'sampledValue': [{'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"f97b6b87-ca80-47b5-9527-fd19d05d940a","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"c060469c-6874-496b-ae8f-5a245bf9467e","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:46:12","sampledValue":[{"value":"236.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2375.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c060469c-6874-496b-ae8f-5a245bf9467e, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:46:12', 'sampledValue': [{'value': '236.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2375.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"c060469c-6874-496b-ae8f-5a245bf9467e","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"b07c6f77-0e8c-4108-ac3d-e19ad77070da","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:46:22","sampledValue":[{"value":"236.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.3","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2375.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=b07c6f77-0e8c-4108-ac3d-e19ad77070da, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:46:22', 'sampledValue': [{'value': '236.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2375.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"b07c6f77-0e8c-4108-ac3d-e19ad77070da","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"dbb085a3-a9b9-43b9-8380-9f49e82397e1","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:46:22"}]
+INFO:ocpp:1: send [3,"dbb085a3-a9b9-43b9-8380-9f49e82397e1",{}]
+INFO:ocpp:1: receive message [2,"c7cdba26-eac4-4593-959d-9a7b262f52da","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:46:32","sampledValue":[{"value":"236.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2375.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c7cdba26-eac4-4593-959d-9a7b262f52da, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:46:32', 'sampledValue': [{'value': '236.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2375.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"c7cdba26-eac4-4593-959d-9a7b262f52da","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"45b0f5e9-7552-4b68-8940-2027ed30de13","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:46:42","sampledValue":[{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2375.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=45b0f5e9-7552-4b68-8940-2027ed30de13, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:46:42', 'sampledValue': [{'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2375.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"45b0f5e9-7552-4b68-8940-2027ed30de13","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"5501f453-6f57-42d2-8164-3733e08b2024","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:46:52","sampledValue":[{"value":"235.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.5","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2375.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=5501f453-6f57-42d2-8164-3733e08b2024, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:46:52', 'sampledValue': [{'value': '235.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2375.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"5501f453-6f57-42d2-8164-3733e08b2024","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"af27eb38-6b20-4845-ab3e-25f43ac0023e","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:46:52"}]
+INFO:ocpp:1: send [3,"af27eb38-6b20-4845-ab3e-25f43ac0023e",{}]
+INFO:ocpp:1: receive message [2,"c422d77e-5beb-40b2-ab26-ba2fe67d87f1","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:47:02","sampledValue":[{"value":"236.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.5","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=c422d77e-5beb-40b2-ab26-ba2fe67d87f1, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:47:02', 'sampledValue': [{'value': '236.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"c422d77e-5beb-40b2-ab26-ba2fe67d87f1","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"6309d8c8-238b-4bf4-b422-cc8d1d169c72","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:47:12","sampledValue":[{"value":"236.1","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.4","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.1","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2371.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=6309d8c8-238b-4bf4-b422-cc8d1d169c72, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:47:12', 'sampledValue': [{'value': '236.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2371.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"6309d8c8-238b-4bf4-b422-cc8d1d169c72","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"56716015-d737-4030-bc77-c6f6b07598e2","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:47:22","sampledValue":[{"value":"236.2","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.4","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2374.8","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=56716015-d737-4030-bc77-c6f6b07598e2, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:47:22', 'sampledValue': [{'value': '236.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2374.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"56716015-d737-4030-bc77-c6f6b07598e2","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"295df4eb-9742-496f-b1c0-c4fe420ac73e","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:47:23"}]
+INFO:ocpp:1: send [3,"295df4eb-9742-496f-b1c0-c4fe420ac73e",{}]
+INFO:ocpp:1: receive message [2,"75b30539-e238-4134-8dc7-808c10b73f3f","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:47:32","sampledValue":[{"value":"236.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2376.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=75b30539-e238-4134-8dc7-808c10b73f3f, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:47:32', 'sampledValue': [{'value': '236.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2376.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"75b30539-e238-4134-8dc7-808c10b73f3f","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"e362d9b9-c2f8-4be4-9041-c19edbb6aa51","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:47:42","sampledValue":[{"value":"236.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2373.7","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=e362d9b9-c2f8-4be4-9041-c19edbb6aa51, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:47:42', 'sampledValue': [{'value': '236.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2373.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"e362d9b9-c2f8-4be4-9041-c19edbb6aa51","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"e089de01-b3dd-4972-b82b-8b6df3a67406","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:47:52","sampledValue":[{"value":"236.5","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2376.4","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=e089de01-b3dd-4972-b82b-8b6df3a67406, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:47:52', 'sampledValue': [{'value': '236.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2376.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"e089de01-b3dd-4972-b82b-8b6df3a67406","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"0a00ce07-2716-4321-80d2-571dd1155c66","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:47:53"}]
+INFO:ocpp:1: send [3,"0a00ce07-2716-4321-80d2-571dd1155c66",{}]
+INFO:ocpp:1: receive message [2,"7f983755-7a44-4cf0-bb7c-1af41fb1529f","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:48:02","sampledValue":[{"value":"236.4","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.9","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2376.2","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=7f983755-7a44-4cf0-bb7c-1af41fb1529f, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:48:02', 'sampledValue': [{'value': '236.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2376.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"7f983755-7a44-4cf0-bb7c-1af41fb1529f","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"87cb8e83-57e3-4949-b452-9048ee51e28c","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:48:12","sampledValue":[{"value":"236.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2376.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=87cb8e83-57e3-4949-b452-9048ee51e28c, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:48:12', 'sampledValue': [{'value': '236.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2376.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"87cb8e83-57e3-4949-b452-9048ee51e28c","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"9d30642b-8b99-4be4-ae5c-9331f8f218e7","Heartbeat",{}]
+INFO:ocpp:1: send [3,"9d30642b-8b99-4be4-ae5c-9331f8f218e7",{"currentTime":"2023-02-23T14:43:31.399254Z"}]
+INFO:ocpp:1: receive message [2,"32d08db5-d82b-41d9-aac4-c72fd4b117f4","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:48:22","sampledValue":[{"value":"237.0","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.6","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.7","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2377.5","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=32d08db5-d82b-41d9-aac4-c72fd4b117f4, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:48:22', 'sampledValue': [{'value': '237.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2377.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"32d08db5-d82b-41d9-aac4-c72fd4b117f4","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"0bbe3d49-5e35-4ae7-bb40-c3bd2fb89206","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:48:23"}]
+INFO:ocpp:1: send [3,"0bbe3d49-5e35-4ae7-bb40-c3bd2fb89206",{}]
+INFO:ocpp:1: receive message [2,"b8b7f834-7d2c-499c-882c-3cfcb90c9bca","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:43:40","sampledValue":[{"value":"236.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.6","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2376.6","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=b8b7f834-7d2c-499c-882c-3cfcb90c9bca, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:43:40', 'sampledValue': [{'value': '236.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2376.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"b8b7f834-7d2c-499c-882c-3cfcb90c9bca","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"5681d36f-9ede-4355-83df-565477296e78","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:43:50","sampledValue":[{"value":"236.9","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"238.8","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.8","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2378.9","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=5681d36f-9ede-4355-83df-565477296e78, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:43:50', 'sampledValue': [{'value': '236.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '238.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2378.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"5681d36f-9ede-4355-83df-565477296e78","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"e782d064-aa55-4dbc-9a62-ef628247fe13","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:44:00","sampledValue":[{"value":"236.7","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.0","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2373.3","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=e782d064-aa55-4dbc-9a62-ef628247fe13, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:44:00', 'sampledValue': [{'value': '236.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2373.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"e782d064-aa55-4dbc-9a62-ef628247fe13","InternalError","An unexpected error occurred.",{}]
+INFO:ocpp:1: receive message [2,"4c13a6e6-b727-4201-9b86-d8416aeb9d4a","StatusNotification",{"connectorId":1,"errorCode":"NoError","status":"Available","timestamp":"2023-02-23T14:44:00"}]
+INFO:ocpp:1: send [3,"4c13a6e6-b727-4201-9b86-d8416aeb9d4a",{}]
+INFO:ocpp:1: receive message [2,"af6d7c49-3233-49e1-8bf9-43d16e82754a","MeterValues",{"connectorId":1,"meterValue":[{"timestamp":"2023-02-23T14:44:10","sampledValue":[{"value":"236.8","measurand":"Voltage","unit":"V","phase":"L1"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"239.2","measurand":"Voltage","unit":"V","phase":"L2"},{"value":"237.3","measurand":"Current.Export","unit":"A","phase":"L2"},{"value":"2373.1","measurand":"Voltage","unit":"V","phase":"L3"},{"value":"0.0","measurand":"Current.Export","unit":"A","phase":"L1"},{"value":"15","measurand":"Temperature","unit":"Celsius"},{"value":"0","measurand":"Power.Active.Export","unit":"W"},{"value":"0","measurand":"Energy.Active.Export.Register","unit":"Wh"}]}]}]
+ERROR:ocpp:Error while handling request '<Call - unique_id=af6d7c49-3233-49e1-8bf9-43d16e82754a, action=MeterValues, payload={'connectorId': 1, 'meterValue': [{'timestamp': '2023-02-23T14:44:10', 'sampledValue': [{'value': '236.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '239.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2373.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '15', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]}>'
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 608, in cmd_query
+    self._cmysql.query(
+_mysql_connector.MySQLInterfaceError: Unknown column 'None' in 'field list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/ocpp/charge_point.py", line 200, in _handle_call
+    response = await response
+  File "/home/elite/Workplace/quanto/app.py", line 253, in on_meter_values
+    postdb.execute(write_consumption % (connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed))
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
+    result = self._cnx.cmd_query(
+  File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query
+    raise get_mysql_exception(
+mysql.connector.errors.ProgrammingError: 1054 (42S22): Unknown column 'None' in 'field list'
+INFO:ocpp:1: send [4,"af6d7c49-3233-49e1-8bf9-43d16e82754a","InternalError","An unexpected error occurred.",{}]
+INFO:websockets.server:connection closed
+INFO:websockets.server:server listening on 10.45.2.39:9000

@@ -22,7 +22,7 @@ expirational_datetime = current_datetime + timedelta(weeks=2, hours=5)
 async def change_charging_status(id_tag, carte):
     print("id_tags : %s" % id_tag)
     tog_charging = "UPDATE carte SET charging = %s WHERE uuid = %s"
-    postdb.execute(tog_charging, (charging_status(carte), id_tag))
+    postdb.execute(tog_charging, (await charging_status(carte), id_tag))
     dbp.commit()
 
     print(postdb.rowcount, "affected")
@@ -170,7 +170,7 @@ class ChargePoint(cp):
             else:
                 expiring = current_datetime.isoformat()
 
-            carte_stat = change2auth_status(res["status"])
+            carte_stat = await change2auth_status(res["status"])
             id_tag_info = dict(status=carte_stat, expiry_date=expiring,
                                parent_id_tag=res["parent_id"])
 
@@ -313,20 +313,21 @@ class ChargePoint(cp):
         res = await authorizer(id_tag)
 
         if res is None:
-            res = dict(status=AuthorizationStatus.invalid, expiry_date=current_datetime.isoformat(),
-                       parent_id_tag=None)
+            id_tag_info = dict(status=AuthorizationStatus.invalid, expiry_date=current_datetime.isoformat(),
+                               parent_id_tag=None)
             trans_id = None
         else:
             if res["status"] == "accepted":
-                expiring = expirational_datetime.isoformat()
                 if res["isCharging"] == 1:
                     res["status"] = "concurrent_tx"
+                    expiry = (expirational_datetime - timedelta(days=2)).isoformat()
                     trans_id = None
                     print(res, trans_id)
                 else:
+                    expiry = expirational_datetime.isoformat()
                     await change_charging_status(id_tag, res)
 
-                    start_charging = "INSERT INTO session (id_tag, connector_id, meterstart, start_stamp) VALUES (%s, %s, %s, %s)"
+                    start_charging = "INSERT INTO session (id_tag, connector_id, meter_start, start_stamp) VALUES (%s, %s, %s, %s)"
                     postdb.execute(start_charging, (id_tag, connector_id, meter_start, timestamp))
                     dbp.commit()
                     print(postdb.rowcount, "affected")
@@ -339,11 +340,14 @@ class ChargePoint(cp):
 
             else:
                 trans_id = None
+                expiry = current_datetime.isoformat()
 
-        res["status"] = await change2auth_status(res["status"])
+            stats = await change2auth_status(res["status"])
+            id_tag_info = dict(status=stats, expiry_date=expiry, parent_id_tag=res["parent_id"])
+
         return call_result.StartTransactionPayload(
             transaction_id=trans_id,
-            id_tag_info=res
+            id_tag_info=id_tag_info
         )
 
     @on(Action.StatusNotification)
@@ -382,14 +386,16 @@ class ChargePoint(cp):
         await change_charging_status(id_tag, res)
 
         print("stop_trans registered")
-        stop_charging = "UPDATE session SET meter_stop = %s, reason = %s, meter_stop = %s WHERE id = %s"
+        stop_charging = "UPDATE session SET meter_stop = %s, reason = %s, stop_stamp = %s WHERE id = %s"
         postdb.execute(stop_charging, (meter_stop, reason, timestamp, transaction_id))
         dbp.commit()
         print(postdb.rowcount, "affected")
         print("start accepted")
-        res["status"] = await change2auth_status(res["status"])
+        stats = await change2auth_status(res["status"])
+        expiry = (expirational_datetime - timedelta(days=2)).isoformat()
+        id_tag_info = dict(status=stats, expiry_date=expiry, parent_id_tag=res["parent_id"])
         return call_result.StopTransactionPayload(
-            id_tag_info=res
+            id_tag_info=id_tag_info
         )
 
 

@@ -19,32 +19,43 @@ current_datetime = datetime.utcnow()
 expirational_datetime = current_datetime + timedelta(weeks=2, hours=5)
 
 
-async def authorizer(id_tag: str, is_true_for_start_and_stop_transaction: bool):
-    """
-    authorizer authorise a user for authorization, start and stop transaction by fetching the parent_id, status
-    and charging of the uuid from one database. if the response is none the auth is invalid.
-    if the res is not none create a dict denies auth if already in use, toggles charging for start and stop
-    transaction through another database otherwise authorise auth.
+async def change_charging_status(id_tag, carte):
+    print("id_tags : %s" % id_tag)
+    tog_charging = "UPDATE carte SET charging = %s WHERE uuid = %s"
+    postdb.execute(tog_charging, (charging_status(carte), id_tag))
+    dbp.commit()
 
-    Args:
-        id_tag: str
-        is_true_for_start_and_stop_transaction: bool
+    print(postdb.rowcount, "affected")
 
-    Returns:
-        id_tag_info
 
-    """
+async def charging_status(carte):
+    x = carte["isCharging"]
+    x ^= 1
+    return x
+
+
+async def change2auth_status(availability):
+    switch = {
+        'accepted': AuthorizationStatus.accepted,
+        'blocked': AuthorizationStatus.blocked,
+        'invalid': AuthorizationStatus.invalid,
+        'expired': AuthorizationStatus.expired,
+        'concurrent_tx': AuthorizationStatus.concurrent_tx
+    }
+    return switch.get(availability, AuthorizationStatus.invalid)
+
+
+async def authorizer(id_tag: str):
     ver_uuid = "SELECT status, charging, parent_id FROM carte WHERE uuid = %s"
-    getdb.execute(ver_uuid, (id_tag,))
-    res_sql = getdb.fetchone()
+    postdb.execute(ver_uuid, (id_tag,))
+    res_sql = postdb.fetchone()
+    print(res_sql)
 
     if res_sql is None:
-        print("try something else")  # FIXME STOP with local should count
+        print("try something else")
         print("id_tags : %s is an alien" % id_tag)
-        id_tag_info = dict(status=AuthorizationStatus.invalid, expiry_date=current_datetime.isoformat(),
-                           parent_id_tag=None)
-
-        return id_tag_info
+        carte = None
+        return carte
 
     else:
         carte = {
@@ -52,40 +63,7 @@ async def authorizer(id_tag: str, is_true_for_start_and_stop_transaction: bool):
             "isCharging": res_sql[1],
             "parent_id": res_sql[2]
         }
-
-        if carte["isCharging"] == 1:
-            print("The card is already in use")
-            id_tag_info = dict(status=AuthorizationStatus.concurrent_tx, parent_id_tag=carte["parent_id"],
-                               expiry_date=(expirational_datetime - timedelta(days=2)).isoformat())
-            return id_tag_info
-        else:
-            def ver_res(availability):
-                switch = {
-                    'accepted': AuthorizationStatus.accepted,
-                    'blocked': AuthorizationStatus.blocked,
-                    'invalid': AuthorizationStatus.invalid,
-                    'expired': AuthorizationStatus.expired,
-                    'concurrent_tx': AuthorizationStatus.concurrent_tx
-                }
-                return switch.get(availability, AuthorizationStatus.invalid)
-
-            if is_true_for_start_and_stop_transaction is True:
-                def charging_status():
-                    x = carte["isCharging"]
-                    x ^= 1
-                    carte["status"] = "accepted" if x == 0 else "concurrent_tx"
-
-                    return x
-
-                print("id_tags : %s" % id_tag)
-                tog_charging = "UPDATE carte SET charging = %s, status = %s WHERE uuid = %s"
-                postdb.execute(tog_charging, (charging_status(), carte["status"], id_tag))
-                dbp.commit()
-                print(postdb.rowcount, "affected")
-                id_tag_info = dict(status=ver_res(carte["status"]), parent_id_tag=carte["parent_id"],
-                                   expiry_date=expirational_datetime.isoformat())
-
-                return id_tag_info
+        return carte
 
 
 class ChargePoint(cp):
@@ -119,8 +97,8 @@ class ChargePoint(cp):
             return switch.get(availability, RegistrationStatus.rejected)
 
         find_charger = "SELECT state, vendor, model, serial_number, firmware_version FROM charger WHERE id = %s"
-        getdb.execute(find_charger, (self.id,))
-        res_sql = getdb.fetchone()
+        postdb.execute(find_charger, (self.id,))
+        res_sql = postdb.fetchone()
 
         if type(res_sql) is tuple:
             if not all(res_sql):
@@ -180,7 +158,21 @@ class ChargePoint(cp):
         for key, value in kwargs.items():
             print("%s == %s" % (key, value))
 
-        id_tag_info = await authorizer(id_tag, False)
+        res = await authorizer(id_tag)
+
+        if res is None:
+            id_tag_info = dict(status=AuthorizationStatus.invalid, expiry_date=current_datetime.isoformat(),
+                               parent_id_tag=None)
+            return id_tag_info
+        else:
+            if res["status"] == "accepted":
+                expiring = expirational_datetime.isoformat()
+            else:
+                expiring = current_datetime.isoformat()
+
+            carte_stat = change2auth_status(res["status"])
+            id_tag_info = dict(status=carte_stat, expiry_date=expiring,
+                               parent_id_tag=res["parent_id"])
 
         return call_result.AuthorizePayload(
             id_tag_info=id_tag_info
@@ -258,8 +250,8 @@ class ChargePoint(cp):
         consumed = meter.get("watts_perhour_value")
 
         find_trans = "SELECT temp, watts, consumed FROM feed WHERE connector_id = %s"
-        getdb.execute(find_trans, (connector_id,))
-        res_sql = getdb.fetchone()
+        postdb.execute(find_trans, (connector_id,))
+        res_sql = postdb.fetchone()
 
         if type(res_sql) is tuple:
             print("TUPLE")
@@ -312,50 +304,47 @@ class ChargePoint(cp):
     @on(Action.StartTransaction)
     async def on_start_transaction(self, id_tag, meter_start, connector_id, timestamp, *args, **kwargs):
         print("start")
-        id_tag_info = await authorizer(id_tag, True)
         for arg in args:
             print("arg : %s" % arg)
 
         for key, value in kwargs.items():
             print("%s == %s" % (key, value))
 
-        if id_tag_info["status"] == "concurrent_tx":
-            fetch_last_trans_id = "SELECT MAX(id) FROM Transaction"
-            getdb.execute(fetch_last_trans_id)
-            res = getdb.fetchone()
-            last_trans_id = res[0]
+        res = await authorizer(id_tag)
 
-            start_charging = "INSERT INTO start (id_tag, connector_id, meterstart, timestamp) VALUES (%s, %s, %s, %s)"
-            postdb.execute(start_charging, (id_tag, connector_id, meter_start, timestamp))
-            dbp.commit()
-            print(postdb.rowcount, "affected")
-            print("start accepted")
-
-            fetch_last_start_id = "SELECT MAX(id) FROM start"
-            getdb.execute(fetch_last_start_id)
-            res = getdb.fetchone()
-            last_start_id = res[0]
-
-            if last_trans_id is None:
-                trans_id = 1
-            else:
-                trans_id = last_trans_id + 1
-
-            act_trans = "INSERT INTO Transaction (id, id_tag, connector_id, start_id, timestamp) VALUES (%s, %s, %s, %s, %s)"
-            postdb.execute(act_trans, (trans_id, id_tag, connector_id, last_start_id, timestamp))
-            dbp.commit()
-
-            return call_result.StartTransactionPayload(
-                transaction_id=trans_id,
-                id_tag_info=id_tag_info
-            )
-
+        if res is None:
+            res = dict(status=AuthorizationStatus.invalid, expiry_date=current_datetime.isoformat(),
+                       parent_id_tag=None)
+            trans_id = None
         else:
-            print("start rejected")
-            return call_result.StartTransactionPayload(
-                transaction_id=0,
-                id_tag_info=id_tag_info
-            )
+            if res["status"] == "accepted":
+                expiring = expirational_datetime.isoformat()
+                if res["isCharging"] == 1:
+                    res["status"] = "concurrent_tx"
+                    trans_id = None
+                    print(res, trans_id)
+                else:
+                    await change_charging_status(id_tag, res)
+
+                    start_charging = "INSERT INTO session (id_tag, connector_id, meterstart, start_stamp) VALUES (%s, %s, %s, %s)"
+                    postdb.execute(start_charging, (id_tag, connector_id, meter_start, timestamp))
+                    dbp.commit()
+                    print(postdb.rowcount, "affected")
+                    print("start accepted")
+
+                    fetch_last_start_id = "SELECT MAX(id) FROM session"
+                    postdb.execute(fetch_last_start_id)
+                    last_id = postdb.fetchone()
+                    trans_id = last_id[0]
+
+            else:
+                trans_id = None
+
+        res["status"] = await change2auth_status(res["status"])
+        return call_result.StartTransactionPayload(
+            transaction_id=trans_id,
+            id_tag_info=res
+        )
 
     @on(Action.StatusNotification)
     async def on_status_notification(self, connector_id, error_code, status, timestamp, *args, **kwargs):
@@ -368,7 +357,7 @@ class ChargePoint(cp):
         print("stats")
         print(timestamp)
 
-        stats = "UPDATE charger SET error_code = %s, status = %s, timestamp = %s  WHERE connecter_id = %s"
+        stats = "UPDATE charger SET error_code = %s, status = %s, timestamp = %s  WHERE connector_id = %s"
         postdb.execute(stats, (error_code, status, timestamp, connector_id))
         dbp.commit()
         print(postdb.rowcount, "affected")
@@ -387,41 +376,21 @@ class ChargePoint(cp):
 
         print("stop_trans")
         print(timestamp)
-        id_tag_info = await authorizer(id_tag, True)
 
-        if id_tag_info["status"] == "accepted":
-            print("stop_trans registered")
-            start_charging = "INSERT INTO stop (id_tag, meter_stop, trans_id, reason, timestamp) VALUES (%s, %s, %s, " \
-                             "%s, %s)"
-            postdb.execute(start_charging, (id_tag, meter_stop, transaction_id, reason, timestamp))
-            dbp.commit()
-            print(postdb.rowcount, "affected")
-            print("start accepted")
+        print("stop")
+        res = await authorizer(id_tag)
+        await change_charging_status(id_tag, res)
 
-            fetch_last_stop_id = "SELECT MAX(id) FROM stop"
-            getdb.execute(fetch_last_stop_id)
-            res = getdb.fetchone()
-            last_stop_id = res[0]
-
-            fetch_last_trans_id = "SELECT MAX(id) FROM Transaction"
-            getdb.execute(fetch_last_trans_id)
-            res = getdb.fetchone()
-            last_trans_id = res[0]
-
-            update_trans = "UPDATE Transaction SET stop_id = %s WHERE id = %s"
-            postdb.execute(update_trans, (last_stop_id, last_trans_id))
-            dbp.commit()
-            print(postdb.rowcount, "affected")
-
-            return call_result.StopTransactionPayload(
-                id_tag_info=id_tag_info
-            )
-
-        else:
-            print("stop_trans rejected")
-            return call_result.StopTransactionPayload(
-                id_tag_info=id_tag_info
-            )
+        print("stop_trans registered")
+        stop_charging = "UPDATE session SET meter_stop = %s, reason = %s, meter_stop = %s WHERE id = %s"
+        postdb.execute(stop_charging, (meter_stop, reason, timestamp, transaction_id))
+        dbp.commit()
+        print(postdb.rowcount, "affected")
+        print("start accepted")
+        res["status"] = await change2auth_status(res["status"])
+        return call_result.StopTransactionPayload(
+            id_tag_info=res
+        )
 
 
 async def on_connect(websocket, path):

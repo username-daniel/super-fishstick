@@ -2,7 +2,7 @@ from ocpp.v16.enums import Action, AuthorizationStatus, ChargePointStatus, Charg
     RegistrationStatus
 from ocpp.v16 import call_result
 from ocpp.v16 import ChargePoint as cp
-from config import getdb, postdb, dbp
+from config import getdb, db, dbp
 from datetime import timedelta, datetime
 
 current_datetime = datetime.utcnow()
@@ -92,9 +92,9 @@ def authorizer(id_tag: str, is_true_for_start_and_stop_transaction: bool, *args)
 
                 print("id_tags : %s" % id_tag)
                 tog_charging = "UPDATE carte SET charging = %s, status = %s WHERE uuid = %s"
-                postdb.execute(tog_charging, (charging_status(), carte["status"], id_tag))
+                db.execute(tog_charging, (charging_status(), carte["status"], id_tag))
                 dbp.commit()
-                print(postdb.rowcount, "affected")
+                print(db.rowcount, "affected")
 
                 if demande == "start":
                     id_tag_info = dict(status=ver_res(y), parent_id_tag=carte["parent_id"],
@@ -203,7 +203,7 @@ print("ast", frat)
 #                 return switch.get(availability, AuthorizationStatus.invalid)
 #
 #             if is_true_for_start_and_stop_transaction is True:
-#                 async def charging_status():
+#                 async def toggle_charging_stat():
 #                     x = carte["isCharging"]
 #                     x ^= 1
 #                     carte["status"] = "accepted" if x == 0 else "concurrent_tx"
@@ -211,9 +211,9 @@ print("ast", frat)
 #
 #                 print("id_tags : %s" % id_tag)
 #                 tog_charging = "UPDATE carte SET charging = %s, status = %s WHERE uuid = %s"
-#                 postdb.execute(tog_charging, (await charging_status(), carte["status"], id_tag))
+#                 db.execute(tog_charging, (await toggle_charging_stat(), carte["status"], id_tag))
 #                 dbp.commit()
-#                 print(postdb.rowcount, "affected")
+#                 print(db.rowcount, "affected")
 #                 id_tag_info = dict(status=await change2auth_status(carte["status"]), parent_id_tag=carte["parent_id"],
 #                                    expiry_date=expirational_datetime.isoformat())
 #                 return id_tag_info

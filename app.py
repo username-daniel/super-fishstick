@@ -1,63 +1,113 @@
 import asyncio
-import websockets
-from datetime import timedelta, datetime
-from ocpp.routing import on, after
-from ocpp.v16.enums import Action, AuthorizationStatus, ChargePointStatus, ChargePointErrorCode, DataTransferStatus, \
-    RegistrationStatus
-from ocpp.v16 import call_result
-from ocpp.v16 import ChargePoint as cp
-from config import getdb, postdb, dbp
 import logging
+from datetime import timedelta, datetime
+
+import websockets
+from ocpp.routing import on
+from ocpp.v16 import ChargePoint as cp
+from ocpp.v16 import call_result
+from ocpp.v16.enums import Action, AuthorizationStatus, DataTransferStatus, \
+    RegistrationStatus
+
+from config import db, dbp
 from meter_values_sanitizer import cleaner
 
-# NOTE TIME IS CALCULATED IN MILLISECONDS
-# id_tag = "17E38AFE"
+# nt = NOTE, exp = explication
 
-# alien 526D94BA
-logging.basicConfig(filename="archive.log", level=logging.INFO)
+# nt: !!!  TIME IS CALCULATED IN MILLISECONDS
+
+# exp: functions to set logs with utctime
+logging.basicConfig(
+    level=logging.DEBUG,
+    format='%(asctime)s¢[%(levelname)s]: %(message)s',
+    datefmt='%d-%m-%Y_%H:%M:%S',
+    filename="app.log"
+)
+
+
+class UTCFormatter(logging.Formatter):
+    converter = datetime.utcfromtimestamp
+
+    def formatTime(self, record, datefmt=None):
+        dt = self.converter(record.created)
+        if datefmt:
+            return dt.strftime(datefmt)
+        else:
+            return dt.strftime("%d-%m-%Y_%H:%M:%S_UTC")
+
+
+handler = logging.StreamHandler()
+handler.setFormatter(UTCFormatter())
+
+logger = logging.getLogger()
+logger.addHandler(handler)
+# exp: logs end here
+
+logger.debug("We are live @@@@")
+
+# exp: datetime for cache clearance
 current_datetime = datetime.utcnow()
 expirational_datetime = current_datetime + timedelta(weeks=2, hours=5)
 
 
+# exp: shows the last 4 characters of vital data for debug
+async def show_last(cred, kind):
+    lth = len(cred)
+    before_last4 = lth - 4
+
+    vart = ""
+    while before_last4 >= 1:
+        vart += "*"
+        before_last4 -= 1
+    fake = vart + cred[-4:]
+    logger.info("the %s { %s } is { %s } letters long." % (kind, fake, len(cred)))
+
+
+# exp: func to change user charging status
 async def change_charging_status(id_tag, carte):
-    print("id_tags : %s" % id_tag)
-    tog_charging = "UPDATE carte SET charging = %s WHERE uuid = %s"
-    postdb.execute(tog_charging, (await charging_status(carte), id_tag))
+    await show_last(id_tag, "id_tag")
+    tog_charging = "UPDATE user_account SET current_charge_session_session_id = CAST(%s AS VARCHAR) WHERE id IN (" \
+                   "SELECT id FROM user_rfid WHERE uid = %s)"
+    db.execute(tog_charging, (await toggle_charging_stat(carte), id_tag))
     dbp.commit()
 
-    print(postdb.rowcount, "affected")
+    logger.info(db.rowcount, "affected")
 
 
-async def charging_status(carte):
+# exp: func to toggle user charging status before updating
+async def toggle_charging_stat(carte):
     x = carte["isCharging"]
     x ^= 1
     return x
 
 
+# exp: func to toggle user charging status to auth status
 async def change2auth_status(availability):
     switch = {
-        'accepted': AuthorizationStatus.accepted,
-        'blocked': AuthorizationStatus.blocked,
-        'invalid': AuthorizationStatus.invalid,
-        'expired': AuthorizationStatus.expired,
-        'concurrent_tx': AuthorizationStatus.concurrent_tx
+        1: AuthorizationStatus.accepted,
+        0: AuthorizationStatus.invalid,
     }
     return switch.get(availability, AuthorizationStatus.invalid)
 
 
+# exp: func to auth user
 async def authorizer(id_tag: str):
-    ver_uuid = "SELECT status, charging, parent_id FROM carte WHERE uuid = %s"
-    postdb.execute(ver_uuid, (id_tag,))
-    res_sql = postdb.fetchone()
-    print(res_sql)
+    logger.info("in authorizer µµµµµ")
+    await show_last(id_tag, "id_tag")
+    # FIXME: parent is fake and should be removed.!!
+    ver_uuid = "SELECT enabled, CAST(current_charge_session_session_id AS INT), parent_tag FROM user_rfid WHERE uid = " \
+               "%s"
+    db.execute(ver_uuid, (id_tag,))
+    res_sql = db.fetchone()
+    logger.info("res_sql is %s", type(res_sql))
 
     if res_sql is None:
-        print("try something else")
-        print("id_tags : %s is an alien" % id_tag)
+        logger.warning("pls, id is an alien. Try something else !!")
         carte = None
         return carte
 
     else:
+        logger.info("matched a carte !!")
         carte = {
             "status": res_sql[0],
             "isCharging": res_sql[1],
@@ -66,22 +116,14 @@ async def authorizer(id_tag: str):
         return carte
 
 
+# exp: func def chargepoint
 class ChargePoint(cp):
-    print(cp)
-    print("----******----")
+    logger.info(cp)
+    logger.info("----******----")
 
     @on(Action.BootNotification)
     async def on_boot_notification(self, *args, **kwargs):
-        print(self.id)
-
-        for arg in args:
-            print("arg : %s" % arg)
-
-        for kwarg in kwargs:
-            print("kwarg : %s" % kwarg)
-
-        for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
+        logger.info("in boot_notification µµµµµ")
 
         vendor = kwargs['charge_point_vendor']
         model = kwargs['charge_point_model']
@@ -96,36 +138,36 @@ class ChargePoint(cp):
             }
             return switch.get(availability, RegistrationStatus.rejected)
 
-        find_charger = "SELECT state, vendor, model, serial_number, firmware_version FROM charger WHERE id = %s"
-        postdb.execute(find_charger, (self.id,))
-        res_sql = postdb.fetchone()
+        find_charger = "SELECT state, vendor, model, serial_number, firmware_version FROM charger WHERE connector_id = %s"
+        db.execute(find_charger, (self.id,))
+        res_sql = db.fetchone()
+        logger.info("res_sql is %s", type(res_sql))
 
         if type(res_sql) is tuple:
             if not all(res_sql):
                 update_charger = "UPDATE charger SET vendor = %s, model = %s, serial_number = %s, " \
                                  "firmware_version = %s WHERE id = %s"
-                postdb.execute(update_charger, (vendor, model, serial_number, firmware_version, self.id))
+                db.execute(update_charger, (vendor, model, serial_number, firmware_version, self.id))
                 dbp.commit()
-                print(postdb.rowcount, "affected")
-                print("boot info stockeds")
+                logger.info(db.rowcount, "affected")
+                logger.info("boot info stockeds")
             else:
-                print("boot info updated")
+                logger.info("boot info updated")
 
             status = ver_res(res_sql[0])
 
         elif res_sql is None:
-            print("no record")
-            print("is not a tuple but %s" % type(res_sql))
+            logger.warning("no record")
+            logger.warning("is not a tuple but %s" % type(res_sql))
 
             status = RegistrationStatus.rejected
 
         else:
-            print("oops")
-            print("is not a tuple but %s" % type(res_sql))
+            logger.warning("oops")
+            logger.warning("is not a tuple but %s" % type(res_sql))
             status = RegistrationStatus.rejected
 
-        print("on boot")
-        print(status)
+        logger.info(status)
 
         return call_result.BootNotificationPayload(
             current_time=current_datetime.isoformat(),
@@ -135,13 +177,7 @@ class ChargePoint(cp):
 
     @on(Action.Heartbeat)
     async def on_heart_beat(self, *args, **kwargs):
-        for arg in args:
-            print("arg : %s" % arg)
-
-        for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
-
-        print("heartbeat")
+        logger.info("in heartbeat µµµµµ")
 
         return call_result.HeartbeatPayload(
             current_time=current_datetime.isoformat() + "Z"
@@ -149,14 +185,8 @@ class ChargePoint(cp):
 
     @on(Action.Authorize)
     async def on_auth(self, id_tag, *args, **kwargs):
-        print("auth")
-        print(id_tag)
-
-        for arg in args:
-            print("arg : %s" % arg)
-
-        for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
+        logger.info("in auth µµµµµ")
+        await show_last(id_tag, "id_tag")
 
         res = await authorizer(id_tag)
 
@@ -165,7 +195,7 @@ class ChargePoint(cp):
                                parent_id_tag=None)
             return id_tag_info
         else:
-            if res["status"] == "accepted":
+            if res["status"] == 1:
                 expiring = expirational_datetime.isoformat()
             else:
                 expiring = current_datetime.isoformat()
@@ -180,13 +210,7 @@ class ChargePoint(cp):
 
     @on(Action.DataTransfer)
     async def on_data_transfer(self, *args, **kwargs):
-        print("data transfer")
-
-        for arg in args:
-            print("arg : %s" % arg)
-
-        for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
+        logger.info("in data_transfer µµµµµ")
 
         return call_result.DataTransferPayload(
             status=DataTransferStatus.rejected
@@ -194,48 +218,38 @@ class ChargePoint(cp):
 
     @on(Action.DiagnosticsStatusNotification)
     async def on_diagnostics(self, *args, **kwargs):
-        print("diagnos")
+        logger.info("in on_diagnostics µµµµµ")
 
-        for arg in args:
-            print("arg : %s" % arg)
+        return call_result.DiagnosticsStatusNotificationPayload(
 
-        for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
+        )
 
     @on(Action.FirmwareStatusNotification)
     async def on_firm_ware(self, *args, **kwargs):
-        print("firm ware")
+        logger.info("in on_firm_ware µµµµµ")
 
-        for arg in args:
-            print("arg : %s" % arg)
+        return call_result.FirmwareStatusNotificationPayload(
 
-        for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
+        )
 
     @on(Action.MeterValues)
     async def on_meter_values(self, connector_id, meter_value, *args, **kwargs):
 
-        print("meter")
-        print(meter_value)
-
-        for arg in args:
-            print("arg : %s" % arg)
-
-        for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
-
-        for kwarg in kwargs:
-            print("kwarg : %s" % kwarg)
+        logger.info("in meter_value µµµµµ")
+        logger.info(meter_value)
 
         transaction_id = kwargs.get('transaction_id', None)
         if transaction_id is None:
             trans_id = None
+            logger.warning("trans_id is %", None)
         else:
             trans_id = kwargs['transaction_id']
+            logger.info("trans_id is % ", trans_id)
 
         meterstamp = meter_value[0].get("timestamp")
 
         meterval = meter_value[0].get("sampled_value")
+        logger.info("meter_stamp", meterstamp)
 
         meter = await cleaner(meter_value)
 
@@ -250,95 +264,72 @@ class ChargePoint(cp):
         consumed = meter.get("watts_perhour_value")
 
         find_trans = "SELECT temp, watts, consumed FROM feed WHERE connector_id = %s"
-        postdb.execute(find_trans, (connector_id,))
-        res_sql = postdb.fetchone()
+        db.execute(find_trans, (connector_id,))
+        res_sql = db.fetchone()
+        logger.info("res_sql is %s", type(res_sql))
 
         if type(res_sql) is tuple:
-            print("TUPLE")
             update_consumption = "UPDATE feed SET trans_id = %s, l1v = %s, l2v = %s, " \
                                  "l3v = %s, l1a = %s, l2a = %s, l3a = %s, temp = %s, watts = %s," \
                                  "consumed = %s, timestamp = %s  WHERE connector_id = %s"
-            postdb.execute(
+            db.execute(
                 update_consumption,
                 (trans_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed, meterstamp, connector_id))
             dbp.commit()
-            print(postdb.rowcount, "affected")
+            logger.info(db.rowcount, "affected")
 
         elif res_sql is None:
-            print("NONE")
+            logger.warning("res_sql is %", None)
             write_consumption = "INSERT INTO feed (trans_id, connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, " \
                                 "watts,consumed,timestamp) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)"
-            postdb.execute(write_consumption,
-                           (trans_id, connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed, meterstamp))
+            db.execute(write_consumption,
+                       (trans_id, connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed, meterstamp))
             dbp.commit()
-            print(postdb.rowcount, "affected")
+            logger.info(db.rowcount, "affected")
 
-        print("Meter Values")
-        print("****************")
-        print("conn id %s is of type %s" % (connector_id, type(connector_id)))
-        print("****************")
-        print("meter vals %s is of type %s" % (meter_value, type(meter_value)))
+        logger.info("conn id %s is of type %s" % (connector_id, type(connector_id)))
 
-        print("meter")
-        print(connector_id)
-        print(meter_value)
-
-        """
-        SANITY CHECK
-            def meterValues(values, *args, **kwargs):
-            # Perform a sanity check on the input values
-            if not isinstance(values, list):
-            raise ValueError("Input values must be a list")
-            if len(values) == 0:
-            raise ValueError("Input values list cannot be empty")
-            for value in values:
-            if not isinstance(value, int):
-            raise ValueError("Input values must be integers")
-            if value < 0:
-            raise ValueError("Input values must be positive")
-        """
         return call_result.MeterValuesPayload(
 
         )
 
     @on(Action.StartTransaction)
     async def on_start_transaction(self, id_tag, meter_start, connector_id, timestamp, *args, **kwargs):
-        print("start")
-        for arg in args:
-            print("arg : %s" % arg)
-
-        for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
+        logger.info("in start_trans µµµµµ")
 
         res = await authorizer(id_tag)
 
         if res is None:
+            logger.warning("res is %s", None)
             id_tag_info = dict(status=AuthorizationStatus.invalid, expiry_date=current_datetime.isoformat(),
                                parent_id_tag=None)
             trans_id = None
         else:
-            if res["status"] == "accepted":
+            logger.info("res is matched !!")
+            if res["status"] == 1:
                 if res["isCharging"] == 1:
                     res["status"] = "concurrent_tx"
                     expiry = (expirational_datetime - timedelta(days=2)).isoformat()
                     trans_id = None
-                    print(res, trans_id)
+                    logger.warning(res, trans_id)
+                    logger.warning("card already in use !!")
                 else:
                     expiry = expirational_datetime.isoformat()
                     await change_charging_status(id_tag, res)
 
                     start_charging = "INSERT INTO session (id_tag, connector_id, meter_start, start_stamp) VALUES (%s, %s, %s, %s)"
-                    postdb.execute(start_charging, (id_tag, connector_id, meter_start, timestamp))
+                    db.execute(start_charging, (id_tag, connector_id, meter_start, timestamp))
                     dbp.commit()
-                    print(postdb.rowcount, "affected")
-                    print("start accepted")
+                    logger.info(db.rowcount, "affected")
+                    logger.info("start accepted")
 
                     fetch_last_start_id = "SELECT MAX(id) FROM session"
-                    postdb.execute(fetch_last_start_id)
-                    last_id = postdb.fetchone()
+                    db.execute(fetch_last_start_id)
+                    last_id = db.fetchone()
                     trans_id = last_id[0]
 
             else:
+                logger.warning("start fell into Oops")
                 trans_id = None
                 expiry = current_datetime.isoformat()
 
@@ -352,19 +343,12 @@ class ChargePoint(cp):
 
     @on(Action.StatusNotification)
     async def on_status_notification(self, connector_id, error_code, status, timestamp, *args, **kwargs):
-        for arg in args:
-            print("arg : %s" % arg)
-
-        for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
-
-        print("stats")
-        print(timestamp)
+        logger.info("in status_notif µµµµµ")
 
         stats = "UPDATE charger SET error_code = %s, status = %s, timestamp = %s  WHERE connector_id = %s"
-        postdb.execute(stats, (error_code, status, timestamp, connector_id))
+        db.execute(stats, (error_code, status, timestamp, connector_id))
         dbp.commit()
-        print(postdb.rowcount, "affected")
+        logger.info(db.rowcount, "affected")
 
         return call_result.StatusNotificationPayload(
 
@@ -372,25 +356,17 @@ class ChargePoint(cp):
 
     @on(Action.StopTransaction)
     async def on_stop_transaction(self, id_tag, meter_stop, timestamp, transaction_id, reason, *args, **kwargs):
-        for arg in args:
-            print("arg : %s" % arg)
+        logger.info("in stopt_trans µµµµµ")
 
-        for key, value in kwargs.items():
-            print("%s == %s" % (key, value))
-
-        print("stop_trans")
-        print(timestamp)
-
-        print("stop")
         res = await authorizer(id_tag)
         await change_charging_status(id_tag, res)
 
-        print("stop_trans registered")
+        logger.info("stop_trans registered")
         stop_charging = "UPDATE session SET meter_stop = %s, reason = %s, stop_stamp = %s WHERE id = %s"
-        postdb.execute(stop_charging, (meter_stop, reason, timestamp, transaction_id))
+        db.execute(stop_charging, (meter_stop, reason, timestamp, transaction_id))
         dbp.commit()
-        print(postdb.rowcount, "affected")
-        print("start accepted")
+        logger.info(db.rowcount, "affected")
+
         stats = await change2auth_status(res["status"])
         expiry = (expirational_datetime - timedelta(days=2)).isoformat()
         id_tag_info = dict(status=stats, expiry_date=expiry, parent_id_tag=res["parent_id"])
@@ -426,7 +402,7 @@ async def on_connect(websocket, path):
 async def main():
     server = await websockets.serve(
         on_connect,
-        "10.45.2.39",
+        "10.45.2.57",
         9000,
         ping_interval=30000,  # 3mins = 180000
         ping_timeout=300000,  # 5 mins

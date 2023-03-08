@@ -2,7 +2,7 @@ from ocpp.v16.enums import Action, AuthorizationStatus, ChargePointStatus, Charg
     RegistrationStatus
 from ocpp.v16 import call_result
 from ocpp.v16 import ChargePoint as cp
-from config import getdb, postdb, dbp, dbg
+from config import getdb, db, dbp, dbg
 from datetime import timedelta, datetime
 
 current_datetime = datetime.utcnow()
@@ -12,10 +12,10 @@ expirational_datetime = current_datetime + timedelta(weeks=2, hours=5)
 def change_charging_status(id_tag, carte):
     print("id_tags : %s" % id_tag)
     tog_charging = "UPDATE carte SET charging = %s WHERE uuid = %s"
-    postdb.execute(tog_charging, (charging_status(carte), id_tag))
+    db.execute(tog_charging, (charging_status(carte), id_tag))
     dbp.commit()
 
-    print(postdb.rowcount, "affected")
+    print(db.rowcount, "affected")
 
 
 def charging_status(carte):
@@ -37,8 +37,8 @@ def ver_res(availability):
 
 def authorizer(id_tag: str):
     ver_uuid = "SELECT status, charging, parent_id FROM carte WHERE uuid = %s"
-    postdb.execute(ver_uuid, (id_tag,))
-    res_sql = postdb.fetchone()
+    db.execute(ver_uuid, (id_tag,))
+    res_sql = db.fetchone()
     print(res_sql)
 
     if res_sql is None:
@@ -194,7 +194,7 @@ async def authorizer(id_tag: str, is_true_for_start_and_stop_transaction: bool, 
                 return switch.get(availability, AuthorizationStatus.invalid)
 
             if is_true_for_start_and_stop_transaction is True:
-                def charging_status():
+                def toggle_charging_stat():
                     x = carte["isCharging"]
                     x ^= 1
                     carte["status"] = "accepted" if x == 0 else "concurrent_tx"
@@ -202,9 +202,9 @@ async def authorizer(id_tag: str, is_true_for_start_and_stop_transaction: bool, 
 
                 print("id_tags : %s" % id_tag)
                 tog_charging = "UPDATE carte SET charging = %s, status = %s WHERE uuid = %s"
-                postdb.execute(tog_charging, (charging_status(), carte["status"], id_tag))
+                db.execute(tog_charging, (toggle_charging_stat(), carte["status"], id_tag))
                 dbp.commit()
-                print(postdb.rowcount, "affected")
+                print(db.rowcount, "affected")
 
                 if demande == "start":
                     id_tag_info = dict(status=change2auth_status(y), parent_id_tag=carte["parent_id"],
@@ -218,3 +218,4 @@ async def authorizer(id_tag: str, is_true_for_start_and_stop_transaction: bool, 
             id_tag_info = dict(status=change2auth_status(carte["status"]), parent_id_tag=carte["parent_id"],
                                expiry_date=expirational_datetime.isoformat())
             return id_tag_info"""
+"""ashim1970@gmailos.com"""

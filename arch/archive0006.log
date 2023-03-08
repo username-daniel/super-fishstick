@@ -332,7 +332,7 @@ Traceback (most recent call last):
   File "/home/elite/Workplace/quanto/app.py", line 294, in on_start_transaction
     id_tag_info = authorizer(id_tag, True)
   File "/home/elite/Workplace/quanto/app.py", line 80, in authorizer
-    postdb.execute(tog_charging % (charging_status(carte["isCharging"]), id_tag))
+    postdb.execute(tog_charging % (toggle_charging_stat(carte["isCharging"]), id_tag))
   File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/cursor_cext.py", line 330, in execute
     result = self._cnx.cmd_query(
   File "/home/elite/Workplace/quanto/lib/python3.9/site-packages/mysql/connector/connection_cext.py", line 616, in cmd_query

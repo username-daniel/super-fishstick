@@ -1,0 +1,315 @@
+/home/elite/Workplace/quanto/bin/python /home/elite/Workplace/quanto/app.py
+<class 'ocpp.v16.ChargePoint'>
+----******----
+Server Started listening to new connections...
+Protocols Matched: %s ocpp1.6
+1
+kwarg : charge_point_model
+kwarg : charge_point_vendor
+kwarg : charge_point_serial_number
+kwarg : firmware_version
+charge_point_model == type-2
+charge_point_vendor == Teison-AC
+charge_point_serial_number == AISEN001
+firmware_version == V0.0.1
+boot info updated
+on boot
+RegistrationStatus.accepted
+meter
+[{'timestamp': '2023-03-01T17:46:31', 'sampled_value': [{'value': '237.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '236.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2374.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:46:31', 'sampled_value': [{'value': '237.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '236.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2374.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:46:31', 'sampled_value': [{'value': '237.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '236.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2374.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '0.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '0', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '0', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+stats
+2023-03-01T17:46:34
+1 affected
+auth
+62E783BA
+('accepted', 0, None)
+stats
+2023-03-01T17:46:39
+1 affected
+start
+('accepted', 0, None)
+id_tags : 62E783BA
+1 affected
+1 affected
+start accepted
+stats
+2023-03-01T17:46:39
+1 affected
+meter
+[{'timestamp': '2023-03-01T17:46:41', 'sampled_value': [{'value': '237.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '2.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2373.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '2.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '198', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '2', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:46:41', 'sampled_value': [{'value': '237.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '2.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2373.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '2.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '198', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '2', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:46:41', 'sampled_value': [{'value': '237.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '2.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2373.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '2.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '198', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '2', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:46:51', 'sampled_value': [{'value': '236.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '15.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2375.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '2.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '491', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '83', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:46:51', 'sampled_value': [{'value': '236.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '15.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2375.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '2.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '491', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '83', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:46:51', 'sampled_value': [{'value': '236.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '15.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '237.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '237.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2375.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '2.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '491', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '83', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:47:01', 'sampled_value': [{'value': '233.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '100.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '239.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2396.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '4.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '4836', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '723', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:47:01', 'sampled_value': [{'value': '233.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '100.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '239.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2396.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '4.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '4836', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '723', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:47:01', 'sampled_value': [{'value': '233.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '100.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '239.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2396.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '4.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '4836', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '723', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+stats
+2023-03-01T17:47:09
+1 affected
+meter
+[{'timestamp': '2023-03-01T17:47:11', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11318', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '3178', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:47:11', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11318', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '3178', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:47:11', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11318', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '3178', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:47:21', 'sampled_value': [{'value': '233.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11319', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '6343', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:47:21', 'sampled_value': [{'value': '233.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11319', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '6343', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:47:21', 'sampled_value': [{'value': '233.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11319', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '6343', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:47:31', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2339.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11330', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '9195', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:47:31', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2339.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11330', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '9195', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:47:31', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.9', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2339.7', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11330', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '9195', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+stats
+2023-03-01T17:47:39
+1 affected
+meter
+[{'timestamp': '2023-03-01T17:47:41', 'sampled_value': [{'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11308', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '12363', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:47:41', 'sampled_value': [{'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11308', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '12363', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:47:41', 'sampled_value': [{'value': '233.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11308', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '12363', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:47:51', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11307', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '15538', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:47:51', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11307', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '15538', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:47:51', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2337.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11307', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '15538', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:48:01', 'sampled_value': [{'value': '233.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2333.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11214', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '18698', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:48:01', 'sampled_value': [{'value': '233.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2333.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11214', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '18698', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:48:01', 'sampled_value': [{'value': '233.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '159.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2333.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '160.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11214', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '18698', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+stats
+2023-03-01T17:48:10
+1 affected
+meter
+[{'timestamp': '2023-03-01T17:48:11', 'sampled_value': [{'value': '232.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11265', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '21854', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:48:11', 'sampled_value': [{'value': '232.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11265', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '21854', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:48:11', 'sampled_value': [{'value': '232.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11265', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '21854', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:48:21', 'sampled_value': [{'value': '233.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2333.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11309', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '25005', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:48:21', 'sampled_value': [{'value': '233.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2333.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11309', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '25005', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:48:21', 'sampled_value': [{'value': '233.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2333.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11309', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '25005', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:48:31', 'sampled_value': [{'value': '233.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11316', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '28170', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:48:31', 'sampled_value': [{'value': '233.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11316', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '28170', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:48:31', 'sampled_value': [{'value': '233.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.1', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11316', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '28170', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+stats
+2023-03-01T17:48:40
+1 affected
+meter
+[{'timestamp': '2023-03-01T17:48:41', 'sampled_value': [{'value': '233.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11325', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '31340', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:48:41', 'sampled_value': [{'value': '233.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11325', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '31340', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:48:41', 'sampled_value': [{'value': '233.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11325', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '31340', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:48:51', 'sampled_value': [{'value': '233.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2332.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11315', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '34502', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:48:51', 'sampled_value': [{'value': '233.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2332.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11315', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '34502', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:48:51', 'sampled_value': [{'value': '233.0', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.5', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2332.6', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11315', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '34502', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:49:01', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2333.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11290', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '37663', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:49:01', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2333.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11290', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '37663', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:49:01', 'sampled_value': [{'value': '233.4', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '233.8', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.3', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2333.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.7', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11290', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '37663', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+stats
+2023-03-01T17:49:10
+1 affected
+meter
+[{'timestamp': '2023-03-01T17:49:11', 'sampled_value': [{'value': '233.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11320', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '40824', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:49:11', 'sampled_value': [{'value': '233.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11320', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '40824', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:49:11', 'sampled_value': [{'value': '233.3', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.6', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.5', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2334.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '161.8', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11320', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '40824', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+meter
+[{'timestamp': '2023-03-01T17:49:21', 'sampled_value': [{'value': '233.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2332.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11313', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '43985', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+transaction_id == 7
+kwarg : transaction_id
+TUPLE
+1 affected
+Meter Values
+****************
+conn id 1 is of type <class 'int'>
+****************
+meter vals [{'timestamp': '2023-03-01T17:49:21', 'sampled_value': [{'value': '233.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2332.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11313', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '43985', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}] is of type <class 'list'>
+meter
+1
+[{'timestamp': '2023-03-01T17:49:21', 'sampled_value': [{'value': '233.1', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L1'}, {'value': '160.4', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '234.2', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L2'}, {'value': '233.2', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L2'}, {'value': '2332.9', 'measurand': 'Voltage', 'unit': 'V', 'phase': 'L3'}, {'value': '162.0', 'measurand': 'Current.Export', 'unit': 'A', 'phase': 'L1'}, {'value': '17', 'measurand': 'Temperature', 'unit': 'Celsius'}, {'value': '11313', 'measurand': 'Power.Active.Export', 'unit': 'W'}, {'value': '43985', 'measurand': 'Energy.Active.Export.Register', 'unit': 'Wh'}]}]
+stop_trans
+2023-03-01T17:49:23
+stop
+('accepted', 1, None)
+id_tags : 62E783BA
+1 affected
+stop_trans registered
+1 affected
+start accepted
+stats
+2023-03-01T17:49:23
+1 affected
+stats
+2023-03-01T17:49:27
+1 affected

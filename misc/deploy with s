@@ -1,0 +1,87 @@
+Deploying to OVH with either Supervisor or Systemd involves setting up a process manager to run and manage your application as a service on the server.
+
+Supervisor is a process manager that allows you to monitor and control processes on a Linux server. Here's how you can deploy an application using Supervisor on OVH:
+
+    Install Supervisor: Run the following command on the server to install Supervisor:
+
+csharp
+
+sudo apt-get install supervisor
+
+    Create a configuration file: Create a configuration file for your application in the /etc/supervisor/conf.d/ directory. For example, if your application is called "myapp", create a file called myapp.conf.
+
+bash
+
+sudo nano /etc/supervisor/conf.d/myapp.conf
+
+    Add configuration: Add the following configuration to the file:
+
+javascript
+
+[program:myapp]
+command=/path/to/myapp
+directory=/path/to/myapp/dir
+autostart=true
+autorestart=true
+startretries=3
+stderr_logfile=/var/log/myapp.err.log
+stdout_logfile=/var/log/myapp.out.log
+
+Replace /path/to/myapp with the path to your application, /path/to/myapp/dir with the path to the directory containing your application, and myapp.err.log and myapp.out.log with the names of your error and output logs.
+
+    Update Supervisor: Update Supervisor to recognize your new configuration:
+
+sql
+
+sudo supervisorctl reread
+sudo supervisorctl update
+
+    Start your application: Start your application with the following command:
+
+sql
+
+sudo supervisorctl start myapp
+
+Systemd is a system and service manager for Linux. Here's how you can deploy an application using Systemd on OVH:
+
+    Create a service file: Create a file called myapp.service in the /etc/systemd/system/ directory.
+
+bash
+
+sudo nano /etc/systemd/system/myapp.service
+
+    Add configuration: Add the following configuration to the file:
+
+makefile
+
+[Unit]
+Description=MyApp Service
+After=network.target
+
+[Service]
+User=your_username
+ExecStart=/path/to/myapp
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
+
+Replace your_username with your username, /path/to/myapp with the path to your application.
+
+    Reload Systemd: Reload Systemd to recognize your new service file:
+
+sudo systemctl daemon-reload
+
+    Start your application: Start your application with the following command:
+
+sql
+
+sudo systemctl start myapp
+
+To automatically start your application on system boot, run the following command:
+
+bash
+
+sudo systemctl enable myapp
+

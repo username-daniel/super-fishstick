@@ -5,25 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="77fcfe5c-e21a-4b2e-9f80-174a0d4dc3fe" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0000.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0001.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0002.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0003.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0004.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0005.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0006.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0007.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0008.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0009.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/archive0010.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hive.py" beforeDir="false" afterPath="$PROJECT_DIR$/misc/hive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/kive.py" beforeDir="false" afterPath="$PROJECT_DIR$/misc/kive.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mess_cleanup.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,15 +32,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "/home/elite/Workplace/py-ocpp/anodagitstaff.py",
-    "settings.editor.selected.configurable": "preferences.pluginManager"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/elite/Workplace/py-ocpp/anodagitstaff.py&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -67,7 +50,7 @@
       <recent name="$PROJECT_DIR$/quanjo" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.app">
     <configuration name="__init__" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="quanto" />
       <option name="INTERPRETER_OPTIONS" value="" />

@@ -20,7 +20,7 @@ from meter_values_sanitizer import cleaner
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s¢[%(levelname)s]: %(message)s',
-    datefmt='%a-%d-%m/%b-%Y_%H:%M:%S',
+    datefmt='%d-%m-%Y_%H:%M:%S',
     filename="app.log"
 )
 
@@ -33,7 +33,7 @@ class UTCFormatter(logging.Formatter):
         if datefmt:
             return dt.strftime(datefmt)
         else:
-            return dt.strftime("%a-%d-%m/%b-%Y_%H:%M:%S_UTC")
+            return dt.strftime("%d-%m-%Y_%H:%M:%S_UTC")
 
 
 handler = logging.StreamHandler()
@@ -66,8 +66,8 @@ async def show_last(cred, kind):
 # exp: func to change user charging status
 async def change_charging_status(id_tag, carte):
     await show_last(id_tag, "id_tag")
-    tog_charging = "UPDATE user_account SET current_charge_session_id = %s WHERE (user_pool_id, username) IN (SELECT " \
-                   "user_pool_id, username FROM rfid_identification WHERE uid = %s);"
+    tog_charging = "UPDATE user_account SET current_charge_session_session_id = CAST(%s AS VARCHAR) WHERE id IN (" \
+                   "SELECT id FROM user_rfid WHERE uid = %s)"
     db.execute(tog_charging, (await toggle_charging_stat(carte), id_tag))
     dbp.commit()
 
@@ -95,8 +95,8 @@ async def authorizer(id_tag: str):
     logger.info("in authorizer µµµµµ")
     await show_last(id_tag, "id_tag")
     # FIXME: parent is fake and should be removed.!!
-    ver_uuid = "SELECT enabled, CAST(current_charge_session_id AS INT) FROM user_account WHERE (user_pool_id, " \
-               "username) IN (SELECT user_pool_id, username FROM rfid_identification WHERE uid = %s);"
+    ver_uuid = "SELECT enabled, CAST(current_charge_session_session_id AS INT), parent_tag FROM user_rfid WHERE uid = " \
+               "%s"
     db.execute(ver_uuid, (id_tag,))
     res_sql = db.fetchone()
     logger.info("res_sql is %s", type(res_sql))
@@ -111,7 +111,7 @@ async def authorizer(id_tag: str):
         carte = {
             "status": res_sql[0],
             "isCharging": res_sql[1],
-            "parent_id": "None"
+            "parent_id": res_sql[2]
         }
         return carte
 
@@ -261,7 +261,7 @@ class ChargePoint(cp):
         l3a = meter.get("l3a_value")
         temp = meter.get("temp_value")
         watts = meter.get("watts_value")
-        consumed = meter.get("watts_perhour_value") * 0.01
+        consumed = meter.get("watts_perhour_value")
 
         find_trans = "SELECT temp, watts, consumed FROM feed WHERE connector_id = %s"
         db.execute(find_trans, (connector_id,))
@@ -317,8 +317,7 @@ class ChargePoint(cp):
                     expiry = expirational_datetime.isoformat()
                     await change_charging_status(id_tag, res)
 
-                    start_charging = "INSERT INTO session (id_tag, connector_id, meter_start, start_stamp) VALUES (" \
-                                     "%s, %s, %s, %s)"
+                    start_charging = "INSERT INTO session (id_tag, connector_id, meter_start, start_stamp) VALUES (%s, %s, %s, %s)"
                     db.execute(start_charging, (id_tag, connector_id, meter_start, timestamp))
                     dbp.commit()
                     logger.info(db.rowcount, "affected")
@@ -398,7 +397,6 @@ async def on_connect(websocket, path):
     cp = ChargePoint(charge_point_id, websocket)
 
     await cp.start()
-
 
 async def main():
     server = await websockets.serve(

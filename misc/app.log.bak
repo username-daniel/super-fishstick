@@ -1,0 +1,13 @@
+10-03-2023_18:05:33¢[DEBUG]: We are live @@@@
+10-03-2023_18:05:33¢[INFO]: <class 'ocpp.v16.ChargePoint'>
+10-03-2023_18:05:33¢[INFO]: ----******----
+10-03-2023_18:05:33¢[DEBUG]: Using selector: EpollSelector
+10-03-2023_19:31:42¢[DEBUG]: We are live @@@@
+10-03-2023_19:31:42¢[INFO]: <class 'ocpp.v16.ChargePoint'>
+10-03-2023_19:31:42¢[INFO]: ----******----
+10-03-2023_19:31:42¢[DEBUG]: Using selector: EpollSelector
+10-03-2023_19:32:54¢[DEBUG]: We are live @@@@
+10-03-2023_19:32:54¢[INFO]: <class 'ocpp.v16.ChargePoint'>
+10-03-2023_19:32:54¢[INFO]: ----******----
+10-03-2023_19:32:54¢[DEBUG]: Using selector: EpollSelector
+10-03-2023_19:32:54¢[INFO]: server listening on 10.45.2.57:9000

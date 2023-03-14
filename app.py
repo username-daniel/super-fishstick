@@ -71,7 +71,7 @@ async def change_charging_status(id_tag, carte):
     db.execute(tog_charging, (await toggle_charging_stat(carte), id_tag))
     dbp.commit()
 
-    logger.info(db.rowcount, "affected")
+    logger.info(str(db.rowcount) + " affected")
 
 
 # exp: func to toggle user charging status before updating
@@ -95,7 +95,7 @@ async def authorizer(id_tag: str):
     logger.info("in authorizer µµµµµ")
     await show_last(id_tag, "id_tag")
     # FIXME: parent is fake and should be removed.!!
-    ver_uuid = "SELECT enabled, CAST(current_charge_session_id AS INT) FROM user_account WHERE (user_pool_id, " \
+    ver_uuid = "SELECT enabled, CAST(current_charge_session_id AS SIGNED) FROM user_account WHERE (user_pool_id, " \
                "username) IN (SELECT user_pool_id, username FROM rfid_identification WHERE uid = %s);"
     db.execute(ver_uuid, (id_tag,))
     res_sql = db.fetchone()
@@ -149,7 +149,7 @@ class ChargePoint(cp):
                                  "firmware_version = %s WHERE id = %s"
                 db.execute(update_charger, (vendor, model, serial_number, firmware_version, self.id))
                 dbp.commit()
-                logger.info(db.rowcount, "affected")
+                logger.info(str(db.rowcount) + " affected")
                 logger.info("boot info stockeds")
             else:
                 logger.info("boot info updated")
@@ -261,7 +261,7 @@ class ChargePoint(cp):
         l3a = meter.get("l3a_value")
         temp = meter.get("temp_value")
         watts = meter.get("watts_value")
-        consumed = meter.get("watts_perhour_value") * 0.01
+        consumed = meter.get("watts_perhour_value") / 100
 
         find_trans = "SELECT temp, watts, consumed FROM feed WHERE connector_id = %s"
         db.execute(find_trans, (connector_id,))
@@ -276,7 +276,7 @@ class ChargePoint(cp):
                 update_consumption,
                 (trans_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed, meterstamp, connector_id))
             dbp.commit()
-            logger.info(db.rowcount, "affected")
+            logger.info(str(db.rowcount) + " affected")
 
         elif res_sql is None:
             logger.warning("res_sql is %", None)
@@ -285,7 +285,7 @@ class ChargePoint(cp):
             db.execute(write_consumption,
                        (trans_id, connector_id, l1v, l2v, l3v, l1a, l2a, l3a, temp, watts, consumed, meterstamp))
             dbp.commit()
-            logger.info(db.rowcount, "affected")
+            logger.info(str(db.rowcount) + " affected")
 
         logger.info("conn id %s is of type %s" % (connector_id, type(connector_id)))
 
@@ -321,7 +321,7 @@ class ChargePoint(cp):
                                      "%s, %s, %s, %s)"
                     db.execute(start_charging, (id_tag, connector_id, meter_start, timestamp))
                     dbp.commit()
-                    logger.info(db.rowcount, "affected")
+                    logger.info(str(db.rowcount) + " affected")
                     logger.info("start accepted")
 
                     fetch_last_start_id = "SELECT MAX(id) FROM session"
@@ -349,7 +349,7 @@ class ChargePoint(cp):
         stats = "UPDATE charger SET error_code = %s, status = %s, timestamp = %s  WHERE connector_id = %s"
         db.execute(stats, (error_code, status, timestamp, connector_id))
         dbp.commit()
-        logger.info(db.rowcount, "affected")
+        logger.info(str(db.rowcount) + " affected")
 
         return call_result.StatusNotificationPayload(
 
@@ -366,7 +366,7 @@ class ChargePoint(cp):
         stop_charging = "UPDATE session SET meter_stop = %s, reason = %s, stop_stamp = %s WHERE id = %s"
         db.execute(stop_charging, (meter_stop, reason, timestamp, transaction_id))
         dbp.commit()
-        logger.info(db.rowcount, "affected")
+        logger.info(str(db.rowcount) + " affected")
 
         stats = await change2auth_status(res["status"])
         expiry = (expirational_datetime - timedelta(days=2)).isoformat()
